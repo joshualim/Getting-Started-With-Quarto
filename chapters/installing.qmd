@@ -1,4 +1,4 @@
-# Installing the required Software
+# Installing the required software
 
 A typical Quarto workflow requires:
 

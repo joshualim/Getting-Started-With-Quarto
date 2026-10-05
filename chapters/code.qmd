@@ -2,7 +2,7 @@
 Quarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.
 
 ## Including inline code snippets
-You can include inline code snippets in between single backticks, e.g. `` `print("Hello, world!") ` `` (this renders as `print("Hello, world!")`).
+You can include inline code snippets in between single backticks, e.g. `` `print("Hello, world!")` `` (this renders as `print("Hello, world!")`).
 
 ## Including code blocks
 You can include code blocks in triple backticks, followed by the language name (for syntax highlighting). For example:
@@ -15,7 +15,6 @@ You can include code blocks in triple backticks, followed by the language name (
 
 This results in the following rendered code output with syntax highlighting:
 ```python
-import numpy as np
 print("Hello, world!")
 ```
 
@@ -48,7 +47,7 @@ You can control how code is executed and displayed using chunk options. For exam
 
 You can set chunk options for individual code chunks using the `#|` syntax directly after the opening triple backticks. 
 
-### Showing Output but Hiding Code
+### Showing output but hiding code {#sec-hide-code}
 You can run the code and display the output, **but hide the code source from viewers** with `#| echo: false`
 
 
@@ -148,7 +147,7 @@ plt.show()
 
 ::: {.callout-tip}
 
-Often it's useful to add  `#| echo: false` at the start of the figure will make sure to not echo the code and only display the figure:
+Often it's useful to add  `#| echo: false` (see @sec-hide-code) at the start of the figure. This makes sure to not echo the code and only display the figure:
 
 ` ```{python}`
 

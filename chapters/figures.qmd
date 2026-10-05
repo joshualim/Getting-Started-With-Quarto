@@ -6,19 +6,21 @@ For full details and advanced options, see the [official Quarto Figures document
 
 :::
 
-## Basic Figure
+## Basic figure
 The example below creates:
 
-- a numbered figure,
-- a visible caption,
-- alternative text for screen readers,
-- a cross-reference target.
+- a numbered figure
+- a visible caption
+- alternative text for screen readers
+- a cross-reference target
 
 ```markdown
 ![Figure caption](images/dice.png){#fig-dice fig-alt="This is descriptive alt text"}
 
 @fig-dice shows four multi-coloured dice.
 ```
+
+This results in the output:
 
 ![Figure caption](images/dice.png){#fig-dice fig-alt="This is descriptive alt text"}
 

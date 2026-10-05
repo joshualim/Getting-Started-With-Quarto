@@ -1,6 +1,6 @@
-# Creating Your First Quarto Document
+# Creating your first Quarto document
 
-# Setting up your Quarto project
+## Setting up your Quarto project
 
 1. Create a new directory for your project.
 2. Launch VSCode
@@ -25,7 +25,12 @@ You may find it useful to create a `figures` and `chapters` folder to keep your 
 
 In this demo we use "Book Project" as the starting point. Alternatively, you may choose a "Default Project" (which has fewer default files) or any of the other templates. 
 
+You can visit the repo for this book to see the final structure of the project: [Getting Started With Quarto](https://github.com/joshualim/Getting-Started-With-Quarto)
+
 :::
+
+
+
 
 ## Rendering your project
 

@@ -1,9 +1,9 @@
-# Working with Sections {#sec-sections}
+# Working with sections {#sec-sections}
 
 Section headings create document structure automatically.
 
 ```markdown
-# Introduction
+# Introduction 
 
 ## Background
 
@@ -36,7 +36,7 @@ Within each .qmd, each heading level will appear in the table of contents (right
 
 Sections are numbered by default (`# Section heading`). You can create a unnumbered heading with `{.unnumbered}` (e.g. )`# Unnumbered section heading {.unnumbered}`)
 
-### Global defaults
+## Global defaults
 Numbered sections are the default and can be controlled in the yaml
 
 ```markdown

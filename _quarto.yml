@@ -10,7 +10,7 @@ book:
   date: "August 2026"
   repo-url: https://github.com/joshualim/Getting-Started-With-Quarto # this is the URL to the GitHub repo for this book
   repo-branch: main
-  repo-actions: [source, edit, issue] # this adds buttons under the contents to view page source on GitHub and to create an issue for the page
+  repo-actions: [source, issue] # this adds buttons under the contents to view page source on GitHub and to create an issue for the page
   chapters:
     - index.qmd
     - chapters/intro.qmd
@@ -26,10 +26,9 @@ book:
     - chapters/moremarkdown.qmd
     - chapters/moresettings.qmd
     - chapters/publishing.qmd
-    - chapters/references.qmd
-    - part: Appendices
-      appendices:
-        - appendices/jupyternotebook.ipynb
+    # - chapters/references.qmd
+  appendices:
+    - appendices/jupyternotebook.ipynb
 
   downloads: [pdf, docx]
 

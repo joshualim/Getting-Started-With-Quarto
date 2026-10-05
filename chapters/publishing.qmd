@@ -1,5 +1,4 @@
-# Publishing a Quarto Project
-
+# Publishing a Quarto project
 Once you have created your Quarto project, you will need to publish the rendered output so that others can access it. Quarto supports several publishing options, but for most teaching-related content at the University of Bath, publishing to Moodle is the recommended approach.
 
 ## Publish to Moodle
@@ -48,7 +47,7 @@ When you make changes to your Quarto project:
 
 ## Public Resources: GitHub Pages
 
-If your Quarto content is intended for public access, GitHub Pages is an excellent option.
+If your Quarto content is intended for public access, [GitHub Pages](https://pages.github.com/) is an excellent option (no Moodle authentication required). 
 
 Advantages include:
 
@@ -58,4 +57,15 @@ Advantages include:
 - Automatic publishing when content is updated.
 - Suitable for open educational resources, documentation, and public-facing guides.
 
-GitHub Pages is particularly useful for resources that do not need Moodle authentication and are intended to be shared publicly.
+
+::: {.callout-tip}
+
+Github pages looks for html either in a `docs` folder or the root of the repo. It's a good idea to update your yaml accordingly:
+
+```yaml
+project:
+  type: book
+  output-dir: docs
+```
+:::
+

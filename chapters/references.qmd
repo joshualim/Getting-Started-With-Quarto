@@ -1,4 +1,6 @@
+::: {.content-hidden when-format="html"}
 # References {.unnumbered}
 
 ::: {#refs}
+:::
 :::

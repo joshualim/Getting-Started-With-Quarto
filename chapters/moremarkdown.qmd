@@ -12,7 +12,7 @@ Simple tables can be written directly in Markdown.
 | Mass | m | kg |
 ```
 
-### Labelled Tables
+### Labelled tables
 
 Tables can also be labelled for cross-reference.
 
@@ -43,7 +43,7 @@ See @tbl-siunits for a summary of units.
 See @tbl-siunits for a summary of units.
 
 
-## Collapsible Sections
+## Collapsible sections
 
 ```html
 <details>
@@ -61,8 +61,8 @@ The solution can be placed here.
 
 </details>
 
-## Callout highlighted Boxes
-You can include callout boxes to format text areas to draw attention to certain parts. There are five different environments and a custom environment
+## Callout/highlight boxes
+You can include **callout boxes** to format text areas to draw attention to certain parts. There are five different environments and a custom environment
 
 - note
 - tip
@@ -70,6 +70,9 @@ You can include callout boxes to format text areas to draw attention to certain 
 - caution
 - warning
 
+### Example callout syntax
+
+Use the following syntax to create a callout box:
 
 ```html
 ::: {.callout-note}
@@ -78,6 +81,8 @@ Here is a callout note.
 
 :::
 ```
+
+### Examples callout boxes
 
 ::: {.callout-note}
 
@@ -113,6 +118,7 @@ Here is a callout warning.
 
 :::
 
+### More callout customisation
 
 ```markdown
 ::: {.callout-note}
@@ -134,7 +140,7 @@ Here's my custom block, which displays like a note!
 ## Footnotes 
 
 ### Inline footnotes
-Footnotes can be created with square brackets.^[This is a footnote]
+Footnotes can be created with square brackets.^[This is a footnote] using the syntax:
 
 ```markdown
 Footnotes can be created with square brackets.^[This is a footnote]

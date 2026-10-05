@@ -1,8 +1,8 @@
-# References and Citations {#sec-referencing}
+# References and citations {#sec-referencing}
 
 Quarto supports citation management through BibTeX and a .bib file in the normal way.
 
-## Connecting the Bibliography
+## Connecting the bibliography
 
 Add the bibliography file to your YAML:
 
@@ -21,7 +21,7 @@ A copy of the [Harvard Bath style file](https://library.bath.ac.uk/harvard-bath/
 :::
 
 
-##Citing Sources
+## Citing Sources
 
 Citations can be added using citation keys.
 
@@ -42,12 +42,4 @@ Multiple citations can be cited like this [@knuth84; @le2026quarto].
 
 ## Reference list
 
-A reference list is generated automatically at the end of each chapter page. 
-
-If you prefer one single reference list for the whole book, include a separate chapter with a specific call to the reference list:
-
-```markdown
-# References {.unnumbered}
-::: {#refs}
-:::
-```
+A reference list is generated automatically at the end of each chapter page in the HTML output. However, in the PDF/docx output, the reference list is generated at the end of the document.

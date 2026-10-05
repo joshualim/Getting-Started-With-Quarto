@@ -1,4 +1,4 @@
-# Converting Existing LaTeX Notes
+# Converting existing LaTeX Notes
 
 Fortunately, a large proportion of LaTeX mathematics can be copied directly into Quarto documents without modification.
 
@@ -20,7 +20,7 @@ E = mc^2
 
 typically work immediately.
 
-## Recommended Migration Approach
+## Recommended migration approach
 
 Rather than converting an entire module at once:
 
@@ -71,3 +71,14 @@ References - generally easy to fix - see @sec-referencing
 
 This list is based on the [Making Lecture Notes with Bookdown guide by Vicky Scowcroft](https://vickyscowcroft.github.io/bookdown_lecture_notes_guide/02-latex-conversion.html#tidying)
 
+
+::: {.callout-tip}
+
+If you're from a LaTeX background and are editing/writing a Quarto document, you may sometimes forget to add blank lines between markdown commands (as with LaTeX you could just close brackets and define the next command). Some *typical* mistakes a LaTeX user makes in markdown:
+
+- you have a figure and then a paragraph of text, you **must add a blank line between the figure and the paragraph**. Otherwise the paragraph will be treated as part of the figure caption.
+- you start a list without a blank line, the list will be treated as part of the previous paragraph (and not start the list environment).
+
+**Simple tip** Always add a blank line between different elements in your Quarto document. This will help avoid formatting issues!
+
+:::

@@ -1,4 +1,4 @@
-# Tweaking the YAML Header
+# Tweaking the YAML header
 
 The YAML block appears at the top of every Quarto document.
 
@@ -67,7 +67,7 @@ If you use dark mode, please if you images have transparency (if you have black 
 
 
 
-# Multiple Output Formats
+## Multiple Output Formats
 
 Quarto can render several formats from the same source.
 
@@ -90,7 +90,7 @@ Always check each output. Sometimes things may note always compile as you wish!
 :::
 
 
-# Creating Books and Lecture Notes {#sec-folder-yaml}
+## Creating Books and Lecture Notes {#sec-folder-yaml}
 
 A common approach is to keep all chapter files in a dedicated chapters folder and store chapter-specific images in an images directory within that folder.
 
