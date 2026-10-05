@@ -1,15 +1,16 @@
 project:
   type: book
+  output-dir: docs # This is the directory where the rendered book will be saved (this makes it very compatible with Github pages workflow).
 
 book:
   title: "Getting Started With Quarto"
   author: "Josh Lim"
   description: A getting started guide to Quarto for academic staff.
-  site-url: https://moodle.bath.ac.uk/course/view.php?id=2497 #
+  site-url: https://joshualim.github.io/Getting-Started-With-Quarto/index.html #
   date: "August 2026"
-  repo-url: https://github.com/joshualim/ # this is the URL to the GitHub repo for this book
+  repo-url: https://github.com/joshualim/Getting-Started-With-Quarto # this is the URL to the GitHub repo for this book
   repo-branch: main
-  repo-actions: [edit, issue] # this adds buttons under the contents to view page source on GitHub and to create an issue for the page
+  repo-actions: [source, edit, issue] # this adds buttons under the contents to view page source on GitHub and to create an issue for the page
   chapters:
     - index.qmd
     - chapters/intro.qmd

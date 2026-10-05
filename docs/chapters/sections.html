@@ -8,7 +8,7 @@
 
 <meta name="description" content="A getting started guide to Quarto for academic staff.">
 
-<title>2&nbsp; Installing the required Software – Getting Started With Quarto</title>
+<title>9&nbsp; Working with Sections – Getting Started With Quarto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,8 +72,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/firstdoc.html" rel="next">
-<link href="../chapters/intro.html" rel="prev">
+<link href="../chapters/referencing.html" rel="next">
+<link href="../chapters/code.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -290,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/installing.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing the required Software</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/sections.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Working with Sections</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Getting Started With Quarto</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/joshualim/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/joshualim/Getting-Started-With-Quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -350,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/installing.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/installing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing the required Software</span></span></a>
   </div>
 </li>
@@ -392,7 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/sections.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/sections.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Working with Sections</span></span></a>
   </div>
 </li>
@@ -440,11 +440,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link active" data-scroll-target="#install-quarto"><span class="header-section-number">2.1</span> 1. Install Quarto</a></li>
-  <li><a href="#install-tex" id="toc-install-tex" class="nav-link" data-scroll-target="#install-tex"><span class="header-section-number">2.2</span> Install TeX</a></li>
-  <li><a href="#install-visual-studio-code" id="toc-install-visual-studio-code" class="nav-link" data-scroll-target="#install-visual-studio-code"><span class="header-section-number">2.3</span> Install Visual Studio Code</a></li>
+  <li><a href="#how-sections-are-displayed" id="toc-how-sections-are-displayed" class="nav-link active" data-scroll-target="#how-sections-are-displayed"><span class="header-section-number">9.1</span> How sections are displayed</a></li>
+  <li><a href="#numbering-sections" id="toc-numbering-sections" class="nav-link" data-scroll-target="#numbering-sections"><span class="header-section-number">9.2</span> Numbering sections</a>
+  <ul class="collapse">
+  <li><a href="#global-defaults" id="toc-global-defaults" class="nav-link" data-scroll-target="#global-defaults"><span class="header-section-number">9.2.1</span> Global defaults</a></li>
+  </ul></li>
+  <li><a href="#labelling-sections" id="toc-labelling-sections" class="nav-link" data-scroll-target="#labelling-sections"><span class="header-section-number">9.3</span> Labelling sections</a></li>
+  <li><a href="#referencing-sections" id="toc-referencing-sections" class="nav-link" data-scroll-target="#referencing-sections"><span class="header-section-number">9.4</span> Referencing sections</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/installing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/sections.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -452,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing the required Software</span></h1>
+<h1 class="title"><span id="sec-sections" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Working with Sections</span></span></h1>
 </div>
 
 
@@ -469,50 +473,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>A typical Quarto workflow requires:</p>
-<ol type="1">
-<li>Quarto (this is a command line tool to render the outputs)</li>
-<li>a TeX installation (for PDF output)</li>
-<li>Visual Studio Code (VS Code)</li>
-</ol>
-<p>Additionally if you wish to execute python/R code from your Quarto project, you should this installed.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Section headings create document structure automatically.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Background</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Results</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Conclusions</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Quarto can automatically number sections using:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="how-sections-are-displayed" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="how-sections-are-displayed"><span class="header-section-number">9.1</span> How sections are displayed</h2>
+<p>Each separate .qmd file will appear in the left hand navigation menu as a (numbered) chapter.</p>
+<p>Within each .qmd, each heading level will appear in the table of contents (right hand side)</p>
+<ul>
+<li>Heading level 1 <code>#</code> will increment the number (e.g.&nbsp;1,2,3 etc)</li>
+<li>Heading level 2 <code>##</code> will increment the subpoints (e.g.&nbsp;1.1, 1.2, 1.3 etc)</li>
+<li>Heading level 3 <code>###</code> will increment the sub-subpoint (e.g.&nbsp;1.1.1, 1.1.2, 1.1.3 etc)</li>
+</ul>
+</section>
+<section id="numbering-sections" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="numbering-sections"><span class="header-section-number">9.2</span> Numbering sections</h2>
+<p>Sections are numbered by default (<code># Section heading</code>). You can create a unnumbered heading with <code>{.unnumbered}</code> (e.g.&nbsp;)<code># Unnumbered section heading {.unnumbered}</code>)</p>
+<section id="global-defaults" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="global-defaults"><span class="header-section-number">9.2.1</span> Global defaults</h3>
+<p>Numbered sections are the default and can be controlled in the yaml</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  html:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    number-sections: true</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    toc: true</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    toc-depth: 3</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    toc-location: right</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  pdf:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    number-sections: true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="labelling-sections" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="labelling-sections"><span class="header-section-number">9.3</span> Labelling sections</h2>
+<p>Sections can be assigned identifiers.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Newton's Laws {#sec-newton}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is similar to LaTeX, where you’d have TeXLive/MikTeX installation and then a editor of your choice</p>
+<p>You should use <code>-</code> rather than <code>_</code> in section labels as underscores can confuse Quarto!</p>
 </div>
 </div>
-<section id="install-quarto" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="install-quarto"><span class="header-section-number">2.1</span> 1. Install Quarto</h2>
-<p>Download Quarto from: <a href="https://quarto.org" class="uri">https://quarto.org</a></p>
-<p>After installation, to check Quarto has been installed and added into the Path, open a terminal and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="install-tex" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="install-tex"><span class="header-section-number">2.2</span> Install TeX</h2>
-<p>This is not covered here, but there are lots of ways of getting TeX!</p>
-<p>A minimal installation, where you can add additional packages as you go may be enough!</p>
-</section>
-<section id="install-visual-studio-code" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="install-visual-studio-code"><span class="header-section-number">2.3</span> Install Visual Studio Code</h2>
-<p>Download VS Code from: <a href="https://code.visualstudio.com" class="uri">https://code.visualstudio.com</a></p>
-<p>Recommended extensions:</p>
-<ul>
-<li>Quarto</li>
-<li>Markdown All in One</li>
-</ul>
-<p>Some other noteworthy extensions for writing documents in VSCode:</p>
-<ul>
-<li>GitLens</li>
-<li>Zotero Citation Picker</li>
-</ul>
+<section id="referencing-sections" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="referencing-sections"><span class="header-section-number">9.4</span> Referencing sections</h2>
+<p>You can then reference the section elsewhere:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>See @sec-newton for an introduction to Newton's Laws.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>When rendered, Quarto automatically inserts the appropriate section number.</p>
 
 
 </section>
@@ -604,7 +627,7 @@ Note
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/moodle\.bath\.ac\.uk\/course\/view\.php?id=2497");
+        var filterRegex = new RegExp("https:\/\/joshualim\.github\.io\/Getting-Started-With-Quarto\/index\.html");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -933,13 +956,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/intro.html" class="pagination-link" aria-label="What is Quarto?">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is Quarto?</span></span>
+      <a href="../chapters/code.html" class="pagination-link" aria-label="Code">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Code</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/firstdoc.html" class="pagination-link" aria-label="Creating Your First Quarto Document">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Creating Your First Quarto Document</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/referencing.html" class="pagination-link" aria-label="References and Citations">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">References and Citations</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -948,4 +971,4 @@ Note
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/installing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/sections.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

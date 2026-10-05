@@ -8,7 +8,7 @@
 
 <meta name="description" content="A getting started guide to Quarto for academic staff.">
 
-<title>3&nbsp; Creating Your First Quarto Document – Getting Started With Quarto</title>
+<title>4&nbsp; Basic Markdown – Getting Started With Quarto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,8 +72,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/basicmarkdown.html" rel="next">
-<link href="../chapters/installing.html" rel="prev">
+<link href="../chapters/latex.html" rel="next">
+<link href="../chapters/firstdoc.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -290,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/firstdoc.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Creating Your First Quarto Document</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/basicmarkdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic Markdown</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -307,7 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Getting Started With Quarto</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/joshualim/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/joshualim/Getting-Started-With-Quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -356,13 +356,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/firstdoc.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/firstdoc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Creating Your First Quarto Document</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/basicmarkdown.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/basicmarkdown.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic Markdown</span></span></a>
   </div>
 </li>
@@ -440,17 +440,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setting-up-your-quarto-project" id="toc-setting-up-your-quarto-project" class="nav-link active" data-scroll-target="#setting-up-your-quarto-project"><span class="header-section-number">4</span> Setting up your Quarto project</a>
-  <ul class="collapse">
-  <li><a href="#rendering-your-project" id="toc-rendering-your-project" class="nav-link" data-scroll-target="#rendering-your-project"><span class="header-section-number">4.1</span> Rendering your project</a>
-  <ul class="collapse">
-  <li><a href="#rendering-from-vscode" id="toc-rendering-from-vscode" class="nav-link" data-scroll-target="#rendering-from-vscode"><span class="header-section-number">4.1.1</span> Rendering from VSCode</a></li>
-  <li><a href="#rendering-from-the-command-line" id="toc-rendering-from-the-command-line" class="nav-link" data-scroll-target="#rendering-from-the-command-line"><span class="header-section-number">4.1.2</span> Rendering from the command line</a></li>
-  <li><a href="#quick-preview" id="toc-quick-preview" class="nav-link" data-scroll-target="#quick-preview"><span class="header-section-number">4.1.3</span> Quick preview</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#headings" id="toc-headings" class="nav-link active" data-scroll-target="#headings"><span class="header-section-number">4.1</span> Headings</a></li>
+  <li><a href="#bold-and-italics" id="toc-bold-and-italics" class="nav-link" data-scroll-target="#bold-and-italics"><span class="header-section-number">4.2</span> Bold and Italics</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">4.3</span> Lists</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><span class="header-section-number">4.4</span> Links&nbsp;</a></li>
+  <li><a href="#basic-images" id="toc-basic-images" class="nav-link" data-scroll-target="#basic-images"><span class="header-section-number">4.5</span> Basic Images</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/firstdoc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/basicmarkdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -458,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Creating Your First Quarto Document</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic Markdown</span></h1>
 </div>
 
 
@@ -475,123 +471,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="setting-up-your-quarto-project" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Setting up your Quarto project</h1>
-<ol type="1">
-<li>Create a new directory for your project.</li>
-<li>Launch VSCode</li>
-<li>Open the command palette (Ctrl-shift-P) and begin typing <code>Quarto: Create Project</code></li>
-<li>Select “Book Project”</li>
-<li>Choose the Project directory you created in step 1.</li>
-</ol>
-<p>This creates:</p>
-<ul>
-<li>a simple <code>_quarto.yml</code> file (effectively your premable)</li>
-<li>a few chapters (<code>*.qmd</code>)</li>
-<li>a <code>references.bib</code> (a simple bibtex file)</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You may find it useful to create a <code>figures</code> and <code>chapters</code> folder to keep your top level directory tidy.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In this demo we use “Book Project” as the starting point. Alternatively, you may choose a “Default Project” (which has fewer default files) or any of the other templates.</p>
-</div>
-</div>
-<section id="rendering-your-project" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="rendering-your-project"><span class="header-section-number">4.1</span> Rendering your project</h2>
-<section id="rendering-from-vscode" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="rendering-from-vscode"><span class="header-section-number">4.1.1</span> Rendering from VSCode</h3>
-<p>You can render your project by:</p>
-<ol type="1">
-<li>Open a .qmd file (e.g.&nbsp;<code>index.qmd</code>) in VSCode.</li>
-<li>Open the command palette (Ctrl-shift-P) and begin typing <code>Quarto: Render Project</code></li>
-<li>Select what to render: <code>All formats | HTML | PDF</code></li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Alternatively, you can launch a live preview which automatically updates as you edit your content. Launch <code>Quarto: Preview</code> or <code>Ctrl-Shift-K</code></p>
-</div>
-</div>
+<p>Most Quarto documents are written using Markdown.</p>
+<p>Markdown is a lightweight syntax for adding structure and formatting to plain text.</p>
+<section id="headings" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="headings"><span class="header-section-number">4.1</span> Headings</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Heading 1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Heading 2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">### Heading 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="rendering-from-the-command-line" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="rendering-from-the-command-line"><span class="header-section-number">4.1.2</span> Rendering from the command line</h3>
-<p>You can either use the Terminal in VSCode (or just have a terminal open) and render the document from a terminal using:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Alternatively, you can launch a live preview which automatically updates as you edit your content.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
+<section id="bold-and-italics" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="bold-and-italics"><span class="header-section-number">4.2</span> Bold and Italics</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>*italic text*</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>**bold text**</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="quick-preview" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="quick-preview"><span class="header-section-number">4.1.3</span> Quick preview</h3>
-<p>For a quick preview of simple markdown code, the <code>Markdown All in One</code> VSCode extension, will show an instant preview of any single markdown document. You can run this Preview from the VSCode command palette of <code>Ctrl-Shift-V</code></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="lists" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="lists"><span class="header-section-number">4.3</span> Lists</h2>
+<p>Unordered list:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item one</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item two</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item three</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Ordered list:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>First item</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Second item</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Third item</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="links" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="links"><span class="header-section-number">4.4</span> Links&nbsp;</h2>
+<p><code>You should always create [clear descriptive links](https://teachinghub.bath.ac.uk/guide/creating-meaningful-links/).</code></p>
+<p>You should always create <a href="https://teachinghub.bath.ac.uk/guide/creating-meaningful-links/">clear descriptive links</a>.</p>
+</section>
+<section id="basic-images" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="basic-images"><span class="header-section-number">4.5</span> Basic Images</h2>
+<p>Basic images with alt text are created with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Figure caption:here are some dice](images/dice.png)</span>{fig-alt="4 colourful </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dice tumbling mid air"}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dice.png" class="img-fluid figure-img" alt="4 colourful dice tumbling mid air"></p>
+<figcaption>Figure caption:here are some dice</figcaption>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please note the quick preview is just a simple markdown display preview (it won’t know about references, figures, code) and doesn’t rebuild your whole project, but can be useful for quick previews to check things look <em>roughly</em> right.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Congratulations, you’ve built your first Quarto project! In the following chapters we will learn how to add content.</p>
-</div>
-</div>
+<p>We will cover how to include figures that you can reference, caption etc in <a href="figures.html" class="quarto-xref"><span>Chapter 6</span></a>.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -681,7 +606,7 @@ Note
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/moodle\.bath\.ac\.uk\/course\/view\.php?id=2497");
+        var filterRegex = new RegExp("https:\/\/joshualim\.github\.io\/Getting-Started-With-Quarto\/index\.html");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1010,13 +935,13 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/installing.html" class="pagination-link" aria-label="Installing the required Software">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing the required Software</span></span>
+      <a href="../chapters/firstdoc.html" class="pagination-link" aria-label="Creating Your First Quarto Document">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Creating Your First Quarto Document</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/basicmarkdown.html" class="pagination-link" aria-label="Basic Markdown">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Basic Markdown</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/latex.html" class="pagination-link" aria-label="Converting Existing LaTeX Notes">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Converting Existing LaTeX Notes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1025,4 +950,4 @@ Note
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/firstdoc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/basicmarkdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

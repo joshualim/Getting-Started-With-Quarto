@@ -8,7 +8,7 @@
 
 <meta name="description" content="A getting started guide to Quarto for academic staff.">
 
-<title>8&nbsp; Code – Getting Started With Quarto</title>
+<title>7&nbsp; Maths Equations – Getting Started With Quarto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -72,8 +72,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/sections.html" rel="next">
-<link href="../chapters/maths.html" rel="prev">
+<link href="../chapters/code.html" rel="next">
+<link href="../chapters/figures.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -116,6 +116,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -290,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/code.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Code</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/maths.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Maths Equations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -307,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Getting Started With Quarto</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/joshualim/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/joshualim/Getting-Started-With-Quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -380,13 +409,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/maths.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/maths.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Maths Equations</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/code.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/code.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Code</span></span></a>
   </div>
 </li>
@@ -440,17 +469,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#including-inline-code-snippets" id="toc-including-inline-code-snippets" class="nav-link active" data-scroll-target="#including-inline-code-snippets"><span class="header-section-number">8.1</span> Including inline code snippets</a></li>
-  <li><a href="#including-code-blocks" id="toc-including-code-blocks" class="nav-link" data-scroll-target="#including-code-blocks"><span class="header-section-number">8.2</span> Including code blocks</a>
-  <ul class="collapse">
-  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code"><span class="header-section-number">8.2.1</span> Running Code</a></li>
-  </ul></li>
-  <li><a href="#showing-output-but-hiding-code" id="toc-showing-output-but-hiding-code" class="nav-link" data-scroll-target="#showing-output-but-hiding-code"><span class="header-section-number">8.3</span> Showing Output but Hiding Code</a></li>
-  <li><a href="#folding-long-code-blocks" id="toc-folding-long-code-blocks" class="nav-link" data-scroll-target="#folding-long-code-blocks"><span class="header-section-number">8.4</span> Folding Long Code Blocks</a></li>
-  <li><a href="#sec-code-figs" id="toc-sec-code-figs" class="nav-link" data-scroll-target="#sec-code-figs"><span class="header-section-number">8.5</span> Figures from code</a></li>
-  <li><a href="#global-code-options" id="toc-global-code-options" class="nav-link" data-scroll-target="#global-code-options"><span class="header-section-number">8.6</span> Global Code Options</a></li>
+  <li><a href="#inline-mathematics" id="toc-inline-mathematics" class="nav-link active" data-scroll-target="#inline-mathematics"><span class="header-section-number">7.1</span> Inline Mathematics</a></li>
+  <li><a href="#display-mathematics" id="toc-display-mathematics" class="nav-link" data-scroll-target="#display-mathematics"><span class="header-section-number">7.2</span> Display Mathematics</a></li>
+  <li><a href="#numbered-equations" id="toc-numbered-equations" class="nav-link" data-scroll-target="#numbered-equations"><span class="header-section-number">7.3</span> Numbered Equations</a></li>
+  <li><a href="#aligned-equations" id="toc-aligned-equations" class="nav-link" data-scroll-target="#aligned-equations"><span class="header-section-number">7.4</span> Aligned equations</a></li>
+  <li><a href="#referencing-equations" id="toc-referencing-equations" class="nav-link" data-scroll-target="#referencing-equations"><span class="header-section-number">7.5</span> Referencing Equations</a></li>
+  <li><a href="#newcommands-and-macros" id="toc-newcommands-and-macros" class="nav-link" data-scroll-target="#newcommands-and-macros"><span class="header-section-number">7.6</span> Newcommands and macros</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/code.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/maths.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -458,7 +484,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Code</span></h1>
+<h1 class="title"><span id="sec-maths" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Maths Equations</span></span></h1>
 </div>
 
 
@@ -475,188 +501,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Quarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.</p>
-<section id="including-inline-code-snippets" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="including-inline-code-snippets"><span class="header-section-number">8.1</span> Including inline code snippets</h2>
-<p>You can include inline code snippets in between backticks, e.g.&nbsp;<code>```print("Hello, world!")```</code>.</p>
+<p>Quarto uses MathJax for mathematics in HTML outputs.</p>
+<section id="inline-mathematics" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="inline-mathematics"><span class="header-section-number">7.1</span> Inline Mathematics</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>The force is given by $F = ma$.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Produces:</p>
+<p>The force is given by <span class="math inline">\(F = ma\)</span>.</p>
 </section>
-<section id="including-code-blocks" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="including-code-blocks"><span class="header-section-number">8.2</span> Including code blocks</h2>
-<p>You can include code blocks in triple backticks, followed by the language name (for syntax highlighting) e.g. <code>```python</code></p>
-<p><code>print("Hello, world!")</code></p>
-<p><code>```</code></p>
-<p>This results in the following rendered code output:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<section id="display-mathematics" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="display-mathematics"><span class="header-section-number">7.2</span> Display Mathematics</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>F = ma</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="numbered-equations" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="numbered-equations"><span class="header-section-number">7.3</span> Numbered Equations</h2>
+<p>Numbered equations can be labelled.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>F = ma</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>$$ {#eq-newton}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span id="eq-newton"><span class="math display">\[
+F = ma
+\tag{7.1}\]</span></span></p>
+</section>
+<section id="aligned-equations" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="aligned-equations"><span class="header-section-number">7.4</span> Aligned equations</h2>
+<p>You can use the <code>\begin{align}</code> or <code>\begin{aligned}</code>to align equations (note <code>\begin{eqnarray}</code> also works, but is generally deprecated and <em>not recommended for TeX nowadays</em>)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>a &amp;= b + c <span class="sc">\\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  &amp;= d + e</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span class="math display">\[
+\begin{align}
+a &amp;= b + c \\
+  &amp;= d + e
+\end{align}
+\]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Supported languages for syntax highlighting include: Python, R, Bash, C, C++, Java, JavaScript, MATLAB, markdown and many more. See the <a href="https://quarto.org/docs/authoring/code.html#code-blocks">Quarto documentation</a> for a full list of supported languages.</p>
-<p>For completely unformatted text use the <code>```text</code> option.</p>
-</div>
-</div>
-<section id="running-code" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="running-code"><span class="header-section-number">8.2.1</span> Running Code</h3>
-<p>Executable code is placed inside a code chunk (notice the curly braces after the opening triple backticks). You can specify the programming language for the code chunk (e.g.&nbsp;<code>python</code>, <code>r</code>, <code>julia</code>, <code>bash</code>, etc.) and Quarto will automatically highlight the syntax.</p>
-<p><code>```{python}</code></p>
-<p><code>#| eval: false</code></p>
-<p><code>print("Hello, world!")</code></p>
-<p><code>```</code></p>
-<p>This results in the following rendered output (shows code and output):</p>
-<div id="37d9cb55" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, world!</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="showing-output-but-hiding-code" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="showing-output-but-hiding-code"><span class="header-section-number">8.3</span> Showing Output but Hiding Code</h2>
-<p>You can run the code and display the output but hide the code source from viewers with <code>#| echo: false</code></p>
-<p><code>```{python}</code></p>
-<p><code>#| echo: false</code></p>
-<p><code>print("Only the output will appear.")</code></p>
-<p><code>```</code></p>
-<p>This results in the following rendered output:</p>
-<div id="7b46392a" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>Only the output will appear.</code></pre>
+<p>Mathjax can’t have multiple labels for a multi-line equation (as of Oct 2026) - you can only label the whole <code>align</code> environment block. There are various workarounds: the simplest and least technical is to have separate equations (but loose the align control). It is still possible to label the whole block but this doesn’t present nicely (again more workarouds are possible, but this is <em>MathJax</em> rather than Quarto limitation.)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>\nabla \cdot \mathbf{E} &amp;= \frac{\rho}{\varepsilon_0} <span class="sc">\\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>\nabla \cdot \mathbf{B} &amp;= 0 <span class="sc">\\</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>\nabla \times \mathbf{E} &amp;= -\frac{\partial \mathbf{B}}{\partial t} <span class="sc">\\</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>\nabla \times \mathbf{B} &amp;= \mu_0\mathbf{J}</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="ss">+ </span>\mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>$$ {#eq-maxwell}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><span id="eq-maxwell"><span class="math display">\[
+\begin{aligned}
+\nabla \cdot \mathbf{E} &amp;= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \mathbf{B} &amp;= 0 \\
+\nabla \times \mathbf{E} &amp;= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &amp;= \mu_0\mathbf{J}
++ \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{aligned}
+\tag{7.2}\]</span></span></p>
 </div>
 </div>
 </section>
-<section id="folding-long-code-blocks" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="folding-long-code-blocks"><span class="header-section-number">8.4</span> Folding Long Code Blocks</h2>
-<p>Long code examples can be collapsed to avoid cluttering the document with <code>#| code-fold: true</code>. You can also add a summary to the code block with <code>#| code-summary: "Show Python code"</code>.</p>
-<p><code>```{python}</code></p>
-<p><code>#| code-fold: true</code></p>
-<p><code>#| code-summary: "Show Python code"</code></p>
-<p><code></code></p>
-<p><code>print("This code is initially hidden.")</code></p>
-<p><code>```</code></p>
-<div id="0839e846" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Show Python code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This code is initially hidden."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>This code is initially hidden.</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="referencing-equations" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="referencing-equations"><span class="header-section-number">7.5</span> Referencing Equations</h2>
+<p>Once labelled, equations can be referenced using:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Equation @eq-newton describes the relationship between force, mass and acceleration.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Equation <a href="#eq-newton" class="quarto-xref">Equation&nbsp;<span>7.1</span></a> describes the relationship between force, mass and acceleration.</p>
+</section>
+<section id="newcommands-and-macros" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="newcommands-and-macros"><span class="header-section-number">7.6</span> Newcommands and macros</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The folding code blocks are expanded in the static PDF output.</p>
+<p>To do: include a simple way to create custom maths macros for HTML/PDF outputs.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>It’s a good idea to keep code lines short (e.g.&nbsp;&lt; 80 characters) as the LaTeX output does not wrap long lines of code.</p>
-</div>
-</div>
-</section>
-<section id="sec-code-figs" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="sec-code-figs"><span class="header-section-number">8.5</span> Figures from code</h2>
-<p>Figures generated from Python, R, or Julia code are <strong>automatically</strong> treated as figures. You should include:</p>
-<ul>
-<li><code>#| label: fig-line-plot</code> - this gives a reference label to the figure</li>
-<li><code>#| fig-cap: "A simple line plot"</code> - this gives a figure caption</li>
-<li><code>#| fig-alt: "Descriptive alt text"</code> - this gives alternative text for accessibility (e.g.&nbsp;screen readers)</li>
-</ul>
-<p><code>```{python}</code></p>
-<p><code>#| label: fig-line-plot</code></p>
-<p><code>#| fig-cap: "A simple line plot"</code></p>
-<p><code>#| fig-alt: "Line graph showing values increasing and decreasing across four observations."</code></p>
-<p><code>import matplotlib.pyplot as plt</code></p>
-<p><code>plt.plot([1, 23, 2, 4])</code></p>
-<p><code>plt.show()</code></p>
-<p><code>```</code></p>
-<div id="cell-fig-line-plot" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>, <span class="dv">23</span>, <span class="dv">2</span>, <span class="dv">4</span>])</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div id="fig-line-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Line graph showing values increasing and decreasing across four observations.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-line-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="code_files/figure-html/fig-line-plot-output-1.png" alt="Line graph showing values increasing and decreasing across four observations." width="566" height="411" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-line-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.1: A simple line plot
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Often it’s useful to add <code>#| echo: false</code> at the start of the figure will make sure to not echo the code and only display the figure:</p>
-<p><code>```{python}</code></p>
-<p><code>#| echo: false</code></p>
-<p><code>#| label: fig-line-plot-noecho</code></p>
-<p><code>#| fig-cap: "A simple line plot"</code></p>
-<p><code>#| fig-alt: "A simplified plot with the</code>#| echo: false<code>to not show the code"</code></p>
-<p><code>import matplotlib.pyplot as plt</code></p>
-<p><code>plt.plot([1, 23, 2, 4])</code></p>
-<p><code>plt.show()</code></p>
-<p><code>```</code></p>
-<div id="cell-fig-line-plot-noecho" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display">
-<div id="fig-line-plot-noecho" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A simplified plot with the `#| echo: false` to not show the code">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-line-plot-noecho-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="code_files/figure-html/fig-line-plot-noecho-output-1.png" alt="A simplified plot with the `#| echo: false` to not show the code" width="566" height="411" class="figure-img">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-line-plot-noecho-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.2: A simple line plot
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="global-code-options" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="global-code-options"><span class="header-section-number">8.6</span> Global Code Options</h2>
-<p>Chunk options can be applied to every code block using the document YAML.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -748,7 +683,7 @@ Figure&nbsp;8.2: A simple line plot
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/moodle\.bath\.ac\.uk\/course\/view\.php?id=2497");
+        var filterRegex = new RegExp("https:\/\/joshualim\.github\.io\/Getting-Started-With-Quarto\/index\.html");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1077,13 +1012,13 @@ Figure&nbsp;8.2: A simple line plot
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/maths.html" class="pagination-link" aria-label="Maths Equations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Maths Equations</span></span>
+      <a href="../chapters/figures.html" class="pagination-link" aria-label="Figures">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Figures</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/sections.html" class="pagination-link" aria-label="Working with Sections">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Working with Sections</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/code.html" class="pagination-link" aria-label="Code">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Code</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1092,4 +1027,4 @@ Figure&nbsp;8.2: A simple line plot
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/code.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/maths.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

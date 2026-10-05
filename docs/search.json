@@ -344,7 +344,7 @@
     "href": "chapters/code.html",
     "title": "8  Code",
     "section": "",
-    "text": "8.1 Including inline code snippets\nQuarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.\nYou can include inline code snippets in between backticks, e.g. ```print(\"Hello, world!\")```.",
+    "text": "8.1 Including inline code snippets\nQuarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.\nYou can include inline code snippets in between single backticks, e.g. `print(\"Hello, world!\") ` (this renders as print(\"Hello, world!\")).",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
     ]
@@ -354,27 +354,27 @@
     "href": "chapters/code.html#including-code-blocks",
     "title": "8  Code",
     "section": "8.2 Including code blocks",
-    "text": "8.2 Including code blocks\nYou can include code blocks in triple backticks, followed by the language name (for syntax highlighting) e.g. ```python\nprint(\"Hello, world!\")\n```\nThis results in the following rendered code output:\nimport numpy as np\nprint(\"Hello, world!\")\n\n\n\n\n\n\nTip\n\n\n\nSupported languages for syntax highlighting include: Python, R, Bash, C, C++, Java, JavaScript, MATLAB, markdown and many more. See the Quarto documentation for a full list of supported languages.\nFor completely unformatted text use the ```text option.\n\n\n\n8.2.1 Running Code\nExecutable code is placed inside a code chunk (notice the curly braces after the opening triple backticks). You can specify the programming language for the code chunk (e.g. python, r, julia, bash, etc.) and Quarto will automatically highlight the syntax.\n```{python}\n#| eval: false\nprint(\"Hello, world!\")\n```\nThis results in the following rendered output (shows code and output):\n\nprint(\"Hello, world!\")\n\nHello, world!",
+    "text": "8.2 Including code blocks\nYou can include code blocks in triple backticks, followed by the language name (for syntax highlighting). For example:\n```python\nprint(\"Hello, world!\")\n```\nThis results in the following rendered code output with syntax highlighting:\nimport numpy as np\nprint(\"Hello, world!\")\n\n\n\n\n\n\nTip\n\n\n\nSupported languages for syntax highlighting include: Python, R, Bash, C, C++, Java, JavaScript, MATLAB, markdown and many more. See the Quarto documentation for a full list of supported languages.\nFor completely unformatted text use the ```text option.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
     ]
   },
   {
-    "objectID": "chapters/code.html#showing-output-but-hiding-code",
-    "href": "chapters/code.html#showing-output-but-hiding-code",
+    "objectID": "chapters/code.html#running-code",
+    "href": "chapters/code.html#running-code",
     "title": "8  Code",
-    "section": "8.3 Showing Output but Hiding Code",
-    "text": "8.3 Showing Output but Hiding Code\nYou can run the code and display the output but hide the code source from viewers with #| echo: false\n```{python}\n#| echo: false\nprint(\"Only the output will appear.\")\n```\nThis results in the following rendered output:\n\n\nOnly the output will appear.",
+    "section": "8.3 Running Code",
+    "text": "8.3 Running Code\nExecutable code is placed inside a code chunk (notice the curly braces after the opening triple backticks). You can specify the programming language for the code chunk (e.g. python, r, julia, bash, etc.) and Quarto will automatically highlight the syntax.\n```{python}\nprint(\"Hello, world!\")\n```\nThis results in the following rendered output (shows code and output):\n\nprint(\"Hello, world!\")\n\nHello, world!",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
     ]
   },
   {
-    "objectID": "chapters/code.html#folding-long-code-blocks",
-    "href": "chapters/code.html#folding-long-code-blocks",
+    "objectID": "chapters/code.html#options-for-running-code",
+    "href": "chapters/code.html#options-for-running-code",
     "title": "8  Code",
-    "section": "8.4 Folding Long Code Blocks",
-    "text": "8.4 Folding Long Code Blocks\nLong code examples can be collapsed to avoid cluttering the document with #| code-fold: true. You can also add a summary to the code block with #| code-summary: \"Show Python code\".\n```{python}\n#| code-fold: true\n#| code-summary: \"Show Python code\"\n\nprint(\"This code is initially hidden.\")\n```\n\n\nShow Python code\nprint(\"This code is initially hidden.\")\n\n\nThis code is initially hidden.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe folding code blocks are expanded in the static PDF output.\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt’s a good idea to keep code lines short (e.g. &lt; 80 characters) as the LaTeX output does not wrap long lines of code.",
+    "section": "8.4 Options for running code",
+    "text": "8.4 Options for running code\nYou can control how code is executed and displayed using chunk options. For example, you can hide the code but show the output, or hide both the code and the output. You can also control whether warnings and messages are displayed.\nYou can set chunk options for individual code chunks using the #| syntax directly after the opening triple backticks.\n\n8.4.1 Showing Output but Hiding Code\nYou can run the code and display the output, but hide the code source from viewers with #| echo: false\n```{python}\n#| echo: false\nprint(\"Only the output will appear.\")\n```\nThis results in the following rendered output:\n\n\nOnly the output will appear.\n\n\n\n\n8.4.2 Folding Long Code Blocks\nLong code examples can be collapsed to avoid cluttering the document with #| code-fold: true. You can also add a summary to the code block with #| code-summary: \"Show Python code\".\n```{python}\n#| code-fold: true\n#| code-summary: \"Show Python code\"\nprint(\"This code is initially hidden.\")\n```\nThis results in the following rendered output:\n\n\nShow Python code\nprint(\"This code is initially hidden.\")\n\n\nThis code is initially hidden.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe folding code blocks are expanded in the static PDF output.\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt’s a good idea to keep code lines short (e.g. &lt; 80 characters) as the LaTeX output does not wrap long lines of code.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
     ]
@@ -384,7 +384,7 @@
     "href": "chapters/code.html#sec-code-figs",
     "title": "8  Code",
     "section": "8.5 Figures from code",
-    "text": "8.5 Figures from code\nFigures generated from Python, R, or Julia code are automatically treated as figures. You should include:\n\n#| label: fig-line-plot - this gives a reference label to the figure\n#| fig-cap: \"A simple line plot\" - this gives a figure caption\n#| fig-alt: \"Descriptive alt text\" - this gives alternative text for accessibility (e.g. screen readers)\n\n```{python}\n#| label: fig-line-plot\n#| fig-cap: \"A simple line plot\"\n#| fig-alt: \"Line graph showing values increasing and decreasing across four observations.\"\nimport matplotlib.pyplot as plt\nplt.plot([1, 23, 2, 4])\nplt.show()\n```\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\n\n\n\n\n\n\nFigure 8.1: A simple line plot\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nOften it’s useful to add #| echo: false at the start of the figure will make sure to not echo the code and only display the figure:\n```{python}\n#| echo: false\n#| label: fig-line-plot-noecho\n#| fig-cap: \"A simple line plot\"\n#| fig-alt: \"A simplified plot with the#| echo: falseto not show the code\"\nimport matplotlib.pyplot as plt\nplt.plot([1, 23, 2, 4])\nplt.show()\n```\n\n\n\n\n\n\n\n\nFigure 8.2: A simple line plot",
+    "text": "8.5 Figures from code\nFigures generated from Python, R, or Julia code are automatically treated as figures. To make these accessible, you should include:\n\n#| label: fig-line-plot - this gives a reference label to the figure\n#| fig-cap: \"A simple line plot\" - this gives a figure caption\n#| fig-alt: \"Descriptive alt text\" - this gives alternative text for accessibility (e.g. screen readers)\n\nFor example, the following code chunk generates a simple line plot:\n```{python}\n#| label: fig-line-plot\n#| fig-cap: \"A simple line plot\"\n#| fig-alt: \"Line graph showing values increasing and decreasing across four observations.\"\nimport matplotlib.pyplot as plt\nplt.plot([1, 23, 2, 4])\nplt.show()\n```\nThis results in the following rendered output:\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\n\n\n\n\n\n\nFigure 8.1: A simple line plot\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nOften it’s useful to add #| echo: false at the start of the figure will make sure to not echo the code and only display the figure:\n```{python}\n#| echo: false\n#| label: fig-line-plot-noecho\n#| fig-cap: \"A simple line plot\"\n#| fig-alt: \"A simplified plot with the#| echo: falseto not show the code\"\nimport matplotlib.pyplot as plt\nplt.plot([1, 23, 2, 4])\nplt.show()\n```\n\n\n\n\n\n\n\n\nFigure 8.2: A simple line plot",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
     ]

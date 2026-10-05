@@ -8,7 +8,7 @@
 
 <meta name="description" content="A getting started guide to Quarto for academic staff.">
 
-<title>References – Getting Started With Quarto</title>
+<title>1&nbsp; What is Quarto? – Getting Started With Quarto</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,26 +27,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -56,7 +37,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/publishing.html" rel="prev">
+<link href="../chapters/installing.html" rel="next">
+<link href="../index.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -273,7 +255,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is Quarto?</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -290,7 +272,7 @@ div.csl-indent {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Getting Started With Quarto</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/joshualim/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/joshualim/Getting-Started-With-Quarto" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -327,7 +309,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is Quarto?</span></span></a>
   </div>
 </li>
@@ -405,7 +387,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/references.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -418,8 +400,22 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-use-quarto" id="toc-why-use-quarto" class="nav-link active" data-scroll-target="#why-use-quarto"><span class="header-section-number">1.1</span> Why Use Quarto?</a>
+  <ul class="collapse">
+  <li><a href="#write-once-publish-anywhere" id="toc-write-once-publish-anywhere" class="nav-link" data-scroll-target="#write-once-publish-anywhere"><span class="header-section-number">1.1.1</span> Write Once, Publish Anywhere</a></li>
+  <li><a href="#accessible-formats" id="toc-accessible-formats" class="nav-link" data-scroll-target="#accessible-formats"><span class="header-section-number">1.1.2</span> Accessible formats</a></li>
+  <li><a href="#plain-text-source-files" id="toc-plain-text-source-files" class="nav-link" data-scroll-target="#plain-text-source-files"><span class="header-section-number">1.1.3</span> Plain Text Source Files</a></li>
+  <li><a href="#rich-content" id="toc-rich-content" class="nav-link" data-scroll-target="#rich-content"><span class="header-section-number">1.1.4</span> Rich content</a></li>
+  </ul></li>
+  <li><a href="#the-anatomy-of-a-quarto-project" id="toc-the-anatomy-of-a-quarto-project" class="nav-link" data-scroll-target="#the-anatomy-of-a-quarto-project"><span class="header-section-number">1.2</span> The anatomy of a Quarto project</a></li>
+  <li><a href="#the-quarto-stack" id="toc-the-quarto-stack" class="nav-link" data-scroll-target="#the-quarto-stack"><span class="header-section-number">1.3</span> The Quarto stack</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -427,7 +423,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">What is Quarto?</span></h1>
 </div>
 
 
@@ -444,11 +440,111 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<p>Quarto is a modern publishing system that allows you to create teaching materials from simple plain-text source files and publish them to a range of formats including:</p>
+<ul>
+<li>HTML websites</li>
+<li>PDF documents</li>
+<li>Microsoft Word documents</li>
+<li>PowerPoint presentations</li>
+<li>Reveal.js slide decks</li>
+<li>Books and collections of lecture notes</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This guide introduces the fundamentals of Quarto using a <strong>Visual Studio Code (VS Code) workflow.</strong></p>
+<p>Alternatively you can also use Quarto through RStudio, the command line and other routes too!</p>
+</div>
+</div>
+<section id="why-use-quarto" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="why-use-quarto"><span class="header-section-number">1.1</span> Why Use Quarto?</h2>
+<section id="write-once-publish-anywhere" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="write-once-publish-anywhere"><span class="header-section-number">1.1.1</span> Write Once, Publish Anywhere</h3>
+<p>A single source document can be rendered as:</p>
+<ul>
+<li>A website for online reading</li>
+<li>A printable PDF</li>
+<li>A Word document</li>
+<li>Presentation slides</li>
+</ul>
+</section>
+<section id="accessible-formats" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="accessible-formats"><span class="header-section-number">1.1.2</span> Accessible formats</h3>
+<p>HTML output can provide:</p>
+<ul>
+<li>Responsive design</li>
+<li>Screen reader support</li>
+<li>Improved navigation</li>
+<li>Adjustable text size</li>
+<li>Better support for mobile devices (compared to PDFs)</li>
+</ul>
+</section>
+<section id="plain-text-source-files" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="plain-text-source-files"><span class="header-section-number">1.1.3</span> Plain Text Source Files</h3>
+<p>Quarto files are plain text, making them:</p>
+<ul>
+<li>Easy to edit</li>
+<li>Easy to archive</li>
+<li>Suitable for version control systems such as Git</li>
+<li>Portable across operating systems</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you’re from a LaTeX background or bookdown then you’ll find the equation syntax and referencing familiar (citations can be managed with a .bib file).</p>
+<p>However, given how extensible LaTeX is, you won’t have access to all the packages you may be familiar with.</p>
+</div>
+</div>
+</section>
+<section id="rich-content" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="rich-content"><span class="header-section-number">1.1.4</span> Rich content</h3>
+<p>You can:</p>
+<ul>
+<li>embed content (e.g.&nbsp;video, interactive widgets)</li>
+<li>execute code and render outputs (e.g.&nbsp;Python, R)</li>
+</ul>
+</section>
+</section>
+<section id="the-anatomy-of-a-quarto-project" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="the-anatomy-of-a-quarto-project"><span class="header-section-number">1.2</span> The anatomy of a Quarto project</h2>
+<p>A typical Quarto project consists of:</p>
+<ul>
+<li>A project folder</li>
+<li>A <code>_quarto.yml</code> configuration file that sets project-level settings (e.g.&nbsp;formatting options, output formats). Similar to a LaTeX preamble, it’s useful to have this separately from the source files so you can easily re-use it.</li>
+<li>One or more Quarto source files (with the extension <code>.qmd</code>). This is written in markdown and is the main bulk of your document.</li>
+<li>a folder for images and other resources</li>
+</ul>
+<p>Optionally, you may also include: - a bibliography file (with the extension <code>.bib</code>) for citations - a folder for custom scripts (e.g.&nbsp;Python, R) that can be executed during the rendering process - a folder for custom extensions (e.g.&nbsp;for new output formats or features - see <a href="https://quarto.org/docs/extensions/">Quarto extensions</a>)</p>
+</section>
+<section id="the-quarto-stack" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="the-quarto-stack"><span class="header-section-number">1.3</span> The Quarto stack</h2>
+<p>Quarto helps automate the process of converting your source content and configuration into a range of publication formats. You write your content in a <code>.qmd</code> file and control how it is rendered using YAML settings (either within the document or in project-level <code>.yml</code> files). Quarto then takes care of the remaining steps, so you can focus on writing content rather than managing complex publishing workflows.</p>
+<p><strong>Rendering workflow</strong></p>
+<ol type="1">
+<li><strong>You write content</strong> in a <code>.qmd</code> file using Markdown, equations, images, and optional code (e.g.&nbsp;additional .py, .R, .ipynb files).</li>
+<li><strong>You define settings</strong> using YAML metadata (your <code>_quarto.yml</code> file or a YAML block within the document).</li>
+<li><strong>Quarto executes code</strong> (if present) using <strong>Knitr, Jupyter</strong>, or another supported engine.</li>
+<li><strong>Quarto converts content</strong> using Pandoc.</li>
+<li><strong>Quarto generates final output</strong> in one or more formats. This includes HTML books (<em>like this one</em>), PDF documents (via LaTeX) and other formats (e.g.&nbsp;Word, Reveal.js, EPUB)</li>
+</ol>
+<p>In practice, most authors only need to maintain their <code>.qmd</code> files and YAML settings (steps 1 and 2 above). Quarto automates the execution, conversion, and creation steps, allowing you to create professional outputs from a single source document.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -537,7 +633,7 @@ div.csl-indent {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/moodle\.bath\.ac\.uk\/course\/view\.php?id=2497");
+        var filterRegex = new RegExp("https:\/\/joshualim\.github\.io\/Getting-Started-With-Quarto\/index\.html");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -866,11 +962,14 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/publishing.html" class="pagination-link" aria-label="Publishing a Quarto Project">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Publishing a Quarto Project</span></span>
+      <a href="../index.html" class="pagination-link" aria-label="About this resource">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About this resource</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../chapters/installing.html" class="pagination-link" aria-label="Installing the required Software">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing the required Software</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -878,4 +977,4 @@ div.csl-indent {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/joshualim/edit/main/chapters/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/edit/main/chapters/intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/joshualim/Getting-Started-With-Quarto/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
