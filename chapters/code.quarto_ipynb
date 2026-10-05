@@ -1,0 +1,343 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "e292b525",
+   "metadata": {},
+   "source": [
+    "# Code \n",
+    "\n",
+    "## Including Code and Code Snippets\n",
+    "\n",
+    "Quarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.\n",
+    "\n",
+    "To show code as an example without executing it, set `#| eval: false`.\n",
+    "\n",
+    "\n",
+    "::: {.callout-warning}\n",
+    "\n",
+    "TODO: stop this accidentally echoing things back. See the page source to see the actual syntax.\n",
+    "\n",
+    ":::\n",
+    "\n",
+    "\n",
+    "    `````markdown "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "177e16c6",
+   "metadata": {
+    "md-indent": "    "
+   },
+   "outputs": [],
+   "source": [
+    "#| eval: false\n",
+    "import numpy as np\n",
+    "x = np.linspace(0, 10, 100)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7ab14fa5",
+   "metadata": {},
+   "source": [
+    "    `````\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "61dfaa28",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| eval: false\n",
+    "\n",
+    "import numpy as np\n",
+    "x = np.linspace(0, 10, 100)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25bca980",
+   "metadata": {},
+   "source": [
+    "### Running Code\n",
+    "\n",
+    "Executable code is placed inside a code chunk. Without the `#| eval: false` the code will run.\n",
+    "\n",
+    "\n",
+    "```text"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "8c5730b6",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello, world!\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Hello, world!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "831805c5",
+   "metadata": {},
+   "source": [
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "b40da033",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello, world!\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Hello, world!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "12b255b0",
+   "metadata": {},
+   "source": [
+    "## Showing Output but Hiding Code\n",
+    "You can run the code and display the output  but hide the code source from viewers with `#| echo: false`\n",
+    "\n",
+    "````text"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "9ebe42cf",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Only the output will appear.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "\n",
+    "print(\"Only the output will appear.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25ad7842",
+   "metadata": {},
+   "source": [
+    "````"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "f2aa3a39",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Only the output will appear.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "\n",
+    "print(\"Only the output will appear.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e107a1d0",
+   "metadata": {},
+   "source": [
+    "## Folding Long Code Blocks\n",
+    "\n",
+    "Long code examples can be collapsed to avoid cluttering the document."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "73e50aec",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "This code is initially hidden.\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| code-fold: true\n",
+    "#| code-summary: \"Show Python code\"\n",
+    "\n",
+    "print(\"This code is initially hidden.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "17f10c0c",
+   "metadata": {},
+   "source": [
+    "::: {.callout-note}\n",
+    "\n",
+    "The folding code blocks are expanded in the static PDF output.\n",
+    "\n",
+    ":::\n",
+    "\n",
+    "\n",
+    "\n",
+    "TODO ;;; note to encourage people to make sure lines aren't too long (as LaTeX output is not wrapped!)\n",
+    "\n",
+    "\n",
+    "## Figures from code {#sec-code-figs}\n",
+    "\n",
+    "Figures generated from Python, R, or Julia code are **automatically** treated as figures. You can include the following (this generates a plot output and echos the original commands)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "fig-line-plot",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/pdf": "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c3RDaGFyIDI1NQovRm9udERlc2NyaXB0b3IgMTQgMCBSIC9TdWJ0eXBlIC9UeXBlMyAvTmFtZSAvQk1RUURWK0RlamFWdVNhbnMKL0ZvbnRCQm94IFsgLTEwMjEgLTQ2MyAxNzk0IDEyMzMgXSAvRm9udE1hdHJpeCBbIDAuMDAxIDAgMCAwLjAwMSAwIDAgXQovQ2hhclByb2NzIDE2IDAgUgovRW5jb2RpbmcgPDwgL1R5cGUgL0VuY29kaW5nCi9EaWZmZXJlbmNlcyBbIDQ2IC9wZXJpb2QgNDggL3plcm8gL29uZSAvdHdvIC90aHJlZSA1MyAvZml2ZSBdID4+Ci9XaWR0aHMgMTMgMCBSID4+CmVuZG9iagoxNCAwIG9iago8PCAvVHlwZSAvRm9udERlc2NyaXB0b3IgL0ZvbnROYW1lIC9CTVFRRFYrRGVqYVZ1U2FucyAvRmxhZ3MgMzIKL0ZvbnRCQm94IFsgLTEwMjEgLTQ2MyAxNzk0IDEyMzMgXSAvQXNjZW50IDkyOSAvRGVzY2VudCAtMjM2IC9DYXBIZWlnaHQgMAovWEhlaWdodCAwIC9JdGFsaWNBbmdsZSAwIC9TdGVtViAwIC9NYXhXaWR0aCAxMzQyID4+CmVuZG9iagoxMyAwIG9iagpbIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwCjYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgMzE4IDQwMSA0NjAgODM4IDYzNgo5NTAgNzgwIDI3NSAzOTAgMzkwIDUwMCA4MzggMzE4IDM2MSAzMTggMzM3IDYzNiA2MzYgNjM2IDYzNiA2MzYgNjM2IDYzNiA2MzYKNjM2IDYzNiAzMzcgMzM3IDgzOCA4MzggODM4IDUzMSAxMDAwIDY4NCA2ODYgNjk4IDc3MCA2MzIgNTc1IDc3NSA3NTIgMjk1CjI5NSA2NTYgNTU3IDg2MyA3NDggNzg3IDYwMyA3ODcgNjk1IDYzNSA2MTEgNzMyIDY4NCA5ODkgNjg1IDYxMSA2ODUgMzkwIDMzNwozOTAgODM4IDUwMCA1MDAgNjEzIDYzNSA1NTAgNjM1IDYxNSAzNTIgNjM1IDYzNCAyNzggMjc4IDU3OSAyNzggOTc0IDYzNCA2MTIKNjM1IDYzNSA0MTEgNTIxIDM5MiA2MzQgNTkyIDgxOCA1OTIgNTkyIDUyNSA2MzYgMzM3IDYzNiA4MzggNjAwIDYzNiA2MDAgMzE4CjM1MiA1MTggMTAwMCA1MDAgNTAwIDUwMCAxMzQyIDYzNSA0MDAgMTA3MCA2MDAgNjg1IDYwMCA2MDAgMzE4IDMxOCA1MTggNTE4CjU5MCA1MDAgMTAwMCA1MDAgMTAwMCA1MjEgNDAwIDEwMjMgNjAwIDUyNSA2MTEgMzE4IDQwMSA2MzYgNjM2IDYzNiA2MzYgMzM3CjUwMCA1MDAgMTAwMCA0NzEgNjEyIDgzOCAzNjEgMTAwMCA1MDAgNTAwIDgzOCA0MDEgNDAxIDUwMCA2MzYgNjM2IDMxOCA1MDAKNDAxIDQ3MSA2MTIgOTY5IDk2OSA5NjkgNTMxIDY4NCA2ODQgNjg0IDY4NCA2ODQgNjg0IDk3NCA2OTggNjMyIDYzMiA2MzIgNjMyCjI5NSAyOTUgMjk1IDI5NSA3NzUgNzQ4IDc4NyA3ODcgNzg3IDc4NyA3ODcgODM4IDc4NyA3MzIgNzMyIDczMiA3MzIgNjExIDYwNQo2MzAgNjEzIDYxMyA2MTMgNjEzIDYxMyA2MTMgOTgyIDU1MCA2MTUgNjE1IDYxNSA2MTUgMjc4IDI3OCAyNzggMjc4IDYxMiA2MzQKNjEyIDYxMiA2MTIgNjEyIDYxMiA4MzggNjEyIDYzNCA2MzQgNjM0IDYzNCA1OTIgNjM1IDU5MiBdCmVuZG9iagoxNiAwIG9iago8PCAvZml2ZSAxNyAwIFIgL29uZSAxOCAwIFIgL3BlcmlvZCAxOSAwIFIgL3RocmVlIDIwIDAgUiAvdHdvIDIxIDAgUgovemVybyAyMiAwIFIgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL0YxIDE1IDAgUiA+PgplbmRvYmoKNCAwIG9iago8PCAvQTEgPDwgL1R5cGUgL0V4dEdTdGF0ZSAvQ0EgMCAvY2EgMSA+PgovQTIgPDwgL1R5cGUgL0V4dEdTdGF0ZSAvQ0EgMSAvY2EgMSA+PiA+PgplbmRvYmoKNSAwIG9iago8PCA+PgplbmRvYmoKNiAwIG9iago8PCA+PgplbmRvYmoKNyAwIG9iago8PCA+PgplbmRvYmoKMiAwIG9iago8PCAvVHlwZSAvUGFnZXMgL0tpZHMgWyAxMSAwIFIgXSAvQ291bnQgMSA+PgplbmRvYmoKMjMgMCBvYmoKPDwgL0NyZWF0b3IgKE1hdHBsb3RsaWIgdjMuMTAuMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZykKL1Byb2R1Y2VyIChNYXRwbG90bGliIHBkZiBiYWNrZW5kIHYzLjEwLjApCi9DcmVhdGlvbkRhdGUgKEQ6MjAyNjEwMDIxOTU4NTMrMDEnMDAnKSA+PgplbmRvYmoKeHJlZgowIDI0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNiAwMDAwMCBuIAowMDAwMDA0NTM5IDAwMDAwIG4gCjAwMDAwMDQzNDUgMDAwMDAgbiAKMDAwMDAwNDM3NyAwMDAwMCBuIAowMDAwMDA0NDc2IDAwMDAwIG4gCjAwMDAwMDQ0OTcgMDAwMDAgbiAKMDAwMDAwNDUxOCAwMDAwMCBuIAowMDAwMDAwMDY1IDAwMDAwIG4gCjAwMDAwMDAzNDMgMDAwMDAgbiAKMDAwMDAwMDk4NiAwMDAwMCBuIAowMDAwMDAwMjA4IDAwMDAwIG4gCjAwMDAwMDA5NjYgMDAwMDAgbiAKMDAwMDAwMzE5MSAwMDAwMCBuIAowMDAwMDAyOTg0IDAwMDAwIG4gCjAwMDAwMDI2MzEgMDAwMDAgbiAKMDAwMDAwNDI0NCAwMDAwMCBuIAowMDAwMDAxMDA2IDAwMDAwIG4gCjAwMDAwMDEzMjggMDAwMDAgbiAKMDAwMDAwMTQ4MyAwMDAwMCBuIAowMDAwMDAxNjA2IDAwMDAwIG4gCjAwMDAwMDIwMTkgMDAwMDAgbiAKMDAwMDAwMjM0MyAwMDAwMCBuIAowMDAwMDA0NTk5IDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgMjQgL1Jvb3QgMSAwIFIgL0luZm8gMjMgMCBSID4+CnN0YXJ0eHJlZgo0NzU4CiUlRU9GCg==",
+      "text/plain": [
+       "<Figure size 1650x1050 with 1 Axes>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "#| label: fig-line-plot\n",
+    "#| fig-cap: A simple line plot\n",
+    "#| fig-alt: Line graph showing values increasing and decreasing across four observations.\n",
+    "\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "plt.plot([1, 23, 2, 4])\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "75cefd57",
+   "metadata": {},
+   "source": [
+    "::: {.callout}\n",
+    "\n",
+    "Often it's useful to add  `#| echo: false` at the start of the figure will make sure to not echo the code and only display the figure:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "fig-line-plot-noecho",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/pdf": "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c3RDaGFyIDI1NQovRm9udERlc2NyaXB0b3IgMTQgMCBSIC9TdWJ0eXBlIC9UeXBlMyAvTmFtZSAvQk1RUURWK0RlamFWdVNhbnMKL0ZvbnRCQm94IFsgLTEwMjEgLTQ2MyAxNzk0IDEyMzMgXSAvRm9udE1hdHJpeCBbIDAuMDAxIDAgMCAwLjAwMSAwIDAgXQovQ2hhclByb2NzIDE2IDAgUgovRW5jb2RpbmcgPDwgL1R5cGUgL0VuY29kaW5nCi9EaWZmZXJlbmNlcyBbIDQ2IC9wZXJpb2QgNDggL3plcm8gL29uZSAvdHdvIC90aHJlZSA1MyAvZml2ZSBdID4+Ci9XaWR0aHMgMTMgMCBSID4+CmVuZG9iagoxNCAwIG9iago8PCAvVHlwZSAvRm9udERlc2NyaXB0b3IgL0ZvbnROYW1lIC9CTVFRRFYrRGVqYVZ1U2FucyAvRmxhZ3MgMzIKL0ZvbnRCQm94IFsgLTEwMjEgLTQ2MyAxNzk0IDEyMzMgXSAvQXNjZW50IDkyOSAvRGVzY2VudCAtMjM2IC9DYXBIZWlnaHQgMAovWEhlaWdodCAwIC9JdGFsaWNBbmdsZSAwIC9TdGVtViAwIC9NYXhXaWR0aCAxMzQyID4+CmVuZG9iagoxMyAwIG9iagpbIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwCjYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgNjAwIDYwMCA2MDAgMzE4IDQwMSA0NjAgODM4IDYzNgo5NTAgNzgwIDI3NSAzOTAgMzkwIDUwMCA4MzggMzE4IDM2MSAzMTggMzM3IDYzNiA2MzYgNjM2IDYzNiA2MzYgNjM2IDYzNiA2MzYKNjM2IDYzNiAzMzcgMzM3IDgzOCA4MzggODM4IDUzMSAxMDAwIDY4NCA2ODYgNjk4IDc3MCA2MzIgNTc1IDc3NSA3NTIgMjk1CjI5NSA2NTYgNTU3IDg2MyA3NDggNzg3IDYwMyA3ODcgNjk1IDYzNSA2MTEgNzMyIDY4NCA5ODkgNjg1IDYxMSA2ODUgMzkwIDMzNwozOTAgODM4IDUwMCA1MDAgNjEzIDYzNSA1NTAgNjM1IDYxNSAzNTIgNjM1IDYzNCAyNzggMjc4IDU3OSAyNzggOTc0IDYzNCA2MTIKNjM1IDYzNSA0MTEgNTIxIDM5MiA2MzQgNTkyIDgxOCA1OTIgNTkyIDUyNSA2MzYgMzM3IDYzNiA4MzggNjAwIDYzNiA2MDAgMzE4CjM1MiA1MTggMTAwMCA1MDAgNTAwIDUwMCAxMzQyIDYzNSA0MDAgMTA3MCA2MDAgNjg1IDYwMCA2MDAgMzE4IDMxOCA1MTggNTE4CjU5MCA1MDAgMTAwMCA1MDAgMTAwMCA1MjEgNDAwIDEwMjMgNjAwIDUyNSA2MTEgMzE4IDQwMSA2MzYgNjM2IDYzNiA2MzYgMzM3CjUwMCA1MDAgMTAwMCA0NzEgNjEyIDgzOCAzNjEgMTAwMCA1MDAgNTAwIDgzOCA0MDEgNDAxIDUwMCA2MzYgNjM2IDMxOCA1MDAKNDAxIDQ3MSA2MTIgOTY5IDk2OSA5NjkgNTMxIDY4NCA2ODQgNjg0IDY4NCA2ODQgNjg0IDk3NCA2OTggNjMyIDYzMiA2MzIgNjMyCjI5NSAyOTUgMjk1IDI5NSA3NzUgNzQ4IDc4NyA3ODcgNzg3IDc4NyA3ODcgODM4IDc4NyA3MzIgNzMyIDczMiA3MzIgNjExIDYwNQo2MzAgNjEzIDYxMyA2MTMgNjEzIDYxMyA2MTMgOTgyIDU1MCA2MTUgNjE1IDYxNSA2MTUgMjc4IDI3OCAyNzggMjc4IDYxMiA2MzQKNjEyIDYxMiA2MTIgNjEyIDYxMiA4MzggNjEyIDYzNCA2MzQgNjM0IDYzNCA1OTIgNjM1IDU5MiBdCmVuZG9iagoxNiAwIG9iago8PCAvZml2ZSAxNyAwIFIgL29uZSAxOCAwIFIgL3BlcmlvZCAxOSAwIFIgL3RocmVlIDIwIDAgUiAvdHdvIDIxIDAgUgovemVybyAyMiAwIFIgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL0YxIDE1IDAgUiA+PgplbmRvYmoKNCAwIG9iago8PCAvQTEgPDwgL1R5cGUgL0V4dEdTdGF0ZSAvQ0EgMCAvY2EgMSA+PgovQTIgPDwgL1R5cGUgL0V4dEdTdGF0ZSAvQ0EgMSAvY2EgMSA+PiA+PgplbmRvYmoKNSAwIG9iago8PCA+PgplbmRvYmoKNiAwIG9iago8PCA+PgplbmRvYmoKNyAwIG9iago8PCA+PgplbmRvYmoKMiAwIG9iago8PCAvVHlwZSAvUGFnZXMgL0tpZHMgWyAxMSAwIFIgXSAvQ291bnQgMSA+PgplbmRvYmoKMjMgMCBvYmoKPDwgL0NyZWF0b3IgKE1hdHBsb3RsaWIgdjMuMTAuMCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZykKL1Byb2R1Y2VyIChNYXRwbG90bGliIHBkZiBiYWNrZW5kIHYzLjEwLjApCi9DcmVhdGlvbkRhdGUgKEQ6MjAyNjEwMDIxOTU4NTMrMDEnMDAnKSA+PgplbmRvYmoKeHJlZgowIDI0CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDAxNiAwMDAwMCBuIAowMDAwMDA0NTM5IDAwMDAwIG4gCjAwMDAwMDQzNDUgMDAwMDAgbiAKMDAwMDAwNDM3NyAwMDAwMCBuIAowMDAwMDA0NDc2IDAwMDAwIG4gCjAwMDAwMDQ0OTcgMDAwMDAgbiAKMDAwMDAwNDUxOCAwMDAwMCBuIAowMDAwMDAwMDY1IDAwMDAwIG4gCjAwMDAwMDAzNDMgMDAwMDAgbiAKMDAwMDAwMDk4NiAwMDAwMCBuIAowMDAwMDAwMjA4IDAwMDAwIG4gCjAwMDAwMDA5NjYgMDAwMDAgbiAKMDAwMDAwMzE5MSAwMDAwMCBuIAowMDAwMDAyOTg0IDAwMDAwIG4gCjAwMDAwMDI2MzEgMDAwMDAgbiAKMDAwMDAwNDI0NCAwMDAwMCBuIAowMDAwMDAxMDA2IDAwMDAwIG4gCjAwMDAwMDEzMjggMDAwMDAgbiAKMDAwMDAwMTQ4MyAwMDAwMCBuIAowMDAwMDAxNjA2IDAwMDAwIG4gCjAwMDAwMDIwMTkgMDAwMDAgbiAKMDAwMDAwMjM0MyAwMDAwMCBuIAowMDAwMDA0NTk5IDAwMDAwIG4gCnRyYWlsZXIKPDwgL1NpemUgMjQgL1Jvb3QgMSAwIFIgL0luZm8gMjMgMCBSID4+CnN0YXJ0eHJlZgo0NzU4CiUlRU9GCg==",
+      "text/plain": [
+       "<Figure size 1650x1050 with 1 Axes>"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "#| echo: false\n",
+    "#| label: fig-line-plot-noecho\n",
+    "#| fig-cap: A simple line plot\n",
+    "#| fig-alt: 'A simplified plot with the `#| echo: false` to not show the code'\n",
+    "\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "plt.plot([1, 23, 2, 4])\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3b6fc4d2",
+   "metadata": {},
+   "source": [
+    ":::\n",
+    "\n",
+    "\n",
+    "\n",
+    "## Global Code Options\n",
+    "\n",
+    "Chunk options can be applied to every code block using the document YAML.\n",
+    "\n",
+    "````markdown\n",
+    "---\n",
+    "execute:\n",
+    "  echo: false\n",
+    "  warning: false\n",
+    "  message: false\n",
+    "---\n",
+    "````"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3",
+   "path": "C:\\Users\\jajhl20\\AppData\\Local\\anaconda3\\share\\jupyter\\kernels\\python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

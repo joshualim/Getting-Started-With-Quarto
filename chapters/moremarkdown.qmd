@@ -1,0 +1,190 @@
+# More Markdown
+
+## Tables
+
+Simple tables can be written directly in Markdown.
+
+```markdown
+| Quantity | Symbol | SI Unit |
+|-----------|---------|---------|
+| Force | F | N |
+| Energy | E | J |
+| Mass | m | kg |
+```
+
+### Labelled Tables
+
+Tables can also be labelled for cross-reference.
+
+```markdown
+| Quantity | Symbol | SI Unit |
+|-----------|---------|---------|
+| Force | F | N |
+| Energy | E | J |
+| Mass | m | kg |
+
+: SI units used throughout this module {#tbl-siunits}
+```
+
+| Quantity | Symbol | SI Unit |
+|-----------|---------|---------|
+| Force | F | N |
+| Energy | E | J |
+| Mass | m | kg |
+
+: SI units used throughout this module {#tbl-siunits}
+
+Reference the table using:
+
+```markdown
+See @tbl-siunits for a summary of units.
+```
+
+See @tbl-siunits for a summary of units.
+
+
+## Collapsible Sections
+
+```html
+<details>
+<summary>Show solution</summary>
+
+The solution can be placed here.
+
+</details>
+```
+
+<details>
+<summary>Show solution</summary>
+
+The solution can be placed here.
+
+</details>
+
+## Callout highlighted Boxes
+You can include callout boxes to format text areas to draw attention to certain parts. There are five different environments and a custom environment
+
+- note
+- tip
+- important
+- caution
+- warning
+
+
+```html
+::: {.callout-note}
+
+Here is a callout note.
+
+:::
+```
+
+::: {.callout-note}
+
+Here is a callout note.
+
+:::
+
+
+::: {.callout-tip}
+
+Here is a callout tip.
+
+:::
+
+
+::: {.callout-important}
+
+Here is a callout important.
+
+:::
+
+
+::: {.callout-caution}
+
+Here is a callout caution.
+
+:::
+
+
+::: {.callout-warning}
+
+Here is a callout warning.
+
+:::
+
+
+```markdown
+::: {.callout-note}
+## Custom title
+
+Here's my custom block, which displays like a note!
+
+:::
+```
+
+::: {.callout-note}
+## Custom title
+
+Here's my custom block, which displays like a note!
+
+:::
+
+
+## Footnotes 
+
+### Inline footnotes
+Footnotes can be created with square brackets.^[This is a footnote]
+
+```markdown
+Footnotes can be created with square brackets.^[This is a footnote]
+```
+### Defining footnotes
+For longer documents, you may prefer to define footnotes separately:
+
+```markdown
+Quarto supports footnotes.[^1]
+ 
+[^1\]: This is a footnote.
+```
+
+::: {.callout-tip}
+
+Use footnotes for supplementary information rather than essential content. Avoid overusing footnotes, as they can distract readers from the main narrative and make your content less accessible to process!
+
+:::
+
+
+## Hiding/commenting out content 
+You can also include HTML comments that will be not be visible on the page. 
+
+
+::: {.callout-warning}
+
+These HTML comments are still visible in the rendered HTML source (this is very different from LaTeX). **Please don't put anything there that you don't want students to see (e.g. solutions!)**
+
+:::
+
+
+```markdown
+<!-- Update this example before publication -->
+```
+
+<!-- Update this example before publication -->
+
+These can also span multiple lines (which can be useful for commenting out sections you don't need!)
+
+```markdown 
+<!--
+TODO:
+- Add an example for cross-references.
+- Check accessibility guidance.
+- Review screenshot captions.
+-->
+```
+
+## Quarto extensions
+
+Quarto extensions are a way to add new features to Quarto. They can be used to create new output formats, add new functionality, or customize the behavior of Quarto.
+
+See [the Quarto extensions guidance](https://quarto.org/docs/extensions/) for a list of extensions and how to create your own.

@@ -1,0 +1,622 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Getting Started With Quarto",
+    "section": "",
+    "text": "About this resource\nThis is a Quarto book is for academic staff who want to get started using Quarto. We cover:\n\nbasic installation and building your first Quarto project\ntips for migrating from a LaTeX source\nusing Quarto with a focus on lecture note things like: maths, figures, referencing and much more!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you prefer, the Quarto website has a more complete set of information and examples: the purpose of this guide is to provide a more focused and practical introduction to Quarto for academic staff.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis guide introduces the fundamentals of Quarto using a Visual Studio Code (VS Code) workflow.\nAlternatively you can also use Quarto through RStudio (e.g. see Quarto for Scientists - an R Studio Workflow), the command line and other routes too!\n\n\n\n\n\n\n\n\nNoteFeedback?\n\n\n\nIf you have any feedback or suggestion on how to make this book more useful then please get in touch with Josh Lim - University of Bath.\nIn particular I’d welcome:\n\nErrors or corrections\nCalls for clarification\nMissing info\nSuggestions for improvements/new topics",
+    "crumbs": [
+      "About this resource"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html",
+    "href": "chapters/intro.html",
+    "title": "1  What is Quarto?",
+    "section": "",
+    "text": "1.1 Why Use Quarto?\nQuarto is a modern publishing system that allows you to create teaching materials from simple plain-text source files and publish them to a range of formats including:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html#why-use-quarto",
+    "href": "chapters/intro.html#why-use-quarto",
+    "title": "1  What is Quarto?",
+    "section": "",
+    "text": "1.1.1 Write Once, Publish Anywhere\nA single source document can be rendered as:\n\nA website for online reading\nA printable PDF\nA Word document\nPresentation slides\n\n\n\n1.1.2 Accessible formats\nHTML output can provide:\n\nResponsive design\nScreen reader support\nImproved navigation\nAdjustable text size\nBetter support for mobile devices (compared to PDFs)\n\n\n\n1.1.3 Plain Text Source Files\nQuarto files are plain text, making them:\n\nEasy to edit\nEasy to archive\nSuitable for version control systems such as Git\nPortable across operating systems\n\n\n\n\n\n\n\nNote\n\n\n\nIf you’re from a LaTeX background or bookdown then you’ll find the equation syntax and referencing familiar (citations can be managed with a .bib file).\nHowever, given how extensible LaTeX is, you won’t have access to all the packages you may be familiar with.\n\n\n\n\n1.1.4 Rich content\nYou can:\n\nembed content (e.g. video, interactive widgets)\nexecute code and render outputs (e.g. Python, R)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html#the-anatomy-of-a-quarto-project",
+    "href": "chapters/intro.html#the-anatomy-of-a-quarto-project",
+    "title": "1  What is Quarto?",
+    "section": "1.2 The anatomy of a Quarto project",
+    "text": "1.2 The anatomy of a Quarto project\nA typical Quarto project consists of:\n\nA project folder\nA _quarto.yml configuration file that sets project-level settings (e.g. formatting options, output formats). Similar to a LaTeX preamble, it’s useful to have this separately from the source files so you can easily re-use it.\nOne or more Quarto source files (with the extension .qmd). This is written in markdown and is the main bulk of your document.\na folder for images and other resources\n\nOptionally, you may also include: - a bibliography file (with the extension .bib) for citations - a folder for custom scripts (e.g. Python, R) that can be executed during the rendering process - a folder for custom extensions (e.g. for new output formats or features - see Quarto extensions)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/intro.html#the-quarto-stack",
+    "href": "chapters/intro.html#the-quarto-stack",
+    "title": "1  What is Quarto?",
+    "section": "1.3 The Quarto stack",
+    "text": "1.3 The Quarto stack\nQuarto helps automate the process of converting your source content and configuration into a range of publication formats. You write your content in a .qmd file and control how it is rendered using YAML settings (either within the document or in project-level .yml files). Quarto then takes care of the remaining steps, so you can focus on writing content rather than managing complex publishing workflows.\nRendering workflow\n\nYou write content in a .qmd file using Markdown, equations, images, and optional code (e.g. additional .py, .R, .ipynb files).\nYou define settings using YAML metadata (your _quarto.yml file or a YAML block within the document).\nQuarto executes code (if present) using Knitr, Jupyter, or another supported engine.\nQuarto converts content using Pandoc.\nQuarto generates final output in one or more formats. This includes HTML books (like this one), PDF documents (via LaTeX) and other formats (e.g. Word, Reveal.js, EPUB)\n\nIn practice, most authors only need to maintain their .qmd files and YAML settings (steps 1 and 2 above). Quarto automates the execution, conversion, and creation steps, allowing you to create professional outputs from a single source document.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>What is Quarto?</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/installing.html",
+    "href": "chapters/installing.html",
+    "title": "2  Installing the required Software",
+    "section": "",
+    "text": "2.1 1. Install Quarto\nA typical Quarto workflow requires:\nAdditionally if you wish to execute python/R code from your Quarto project, you should this installed.\nDownload Quarto from: https://quarto.org\nAfter installation, to check Quarto has been installed and added into the Path, open a terminal and run:",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing the required Software</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/installing.html#install-quarto",
+    "href": "chapters/installing.html#install-quarto",
+    "title": "2  Installing the required Software",
+    "section": "",
+    "text": "quarto check",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing the required Software</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/installing.html#install-tex",
+    "href": "chapters/installing.html#install-tex",
+    "title": "2  Installing the required Software",
+    "section": "2.2 Install TeX",
+    "text": "2.2 Install TeX\nThis is not covered here, but there are lots of ways of getting TeX!\nA minimal installation, where you can add additional packages as you go may be enough!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing the required Software</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/installing.html#install-visual-studio-code",
+    "href": "chapters/installing.html#install-visual-studio-code",
+    "title": "2  Installing the required Software",
+    "section": "2.3 Install Visual Studio Code",
+    "text": "2.3 Install Visual Studio Code\nDownload VS Code from: https://code.visualstudio.com\nRecommended extensions:\n\nQuarto\nMarkdown All in One\n\nSome other noteworthy extensions for writing documents in VSCode:\n\nGitLens\nZotero Citation Picker",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Installing the required Software</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/firstdoc.html",
+    "href": "chapters/firstdoc.html",
+    "title": "3  Creating Your First Quarto Document",
+    "section": "",
+    "text": "4 Setting up your Quarto project\nThis creates:",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Creating Your First Quarto Document</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/firstdoc.html#rendering-your-project",
+    "href": "chapters/firstdoc.html#rendering-your-project",
+    "title": "3  Creating Your First Quarto Document",
+    "section": "4.1 Rendering your project",
+    "text": "4.1 Rendering your project\n\n4.1.1 Rendering from VSCode\nYou can render your project by:\n\nOpen a .qmd file (e.g. index.qmd) in VSCode.\nOpen the command palette (Ctrl-shift-P) and begin typing Quarto: Render Project\nSelect what to render: All formats | HTML | PDF\n\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, you can launch a live preview which automatically updates as you edit your content. Launch Quarto: Preview or Ctrl-Shift-K\n\n\n\n\n4.1.2 Rendering from the command line\nYou can either use the Terminal in VSCode (or just have a terminal open) and render the document from a terminal using:\nquarto render\n\n\n\n\n\n\nTip\n\n\n\nAlternatively, you can launch a live preview which automatically updates as you edit your content.\nquarto preview\n\n\n\n\n4.1.3 Quick preview\nFor a quick preview of simple markdown code, the Markdown All in One VSCode extension, will show an instant preview of any single markdown document. You can run this Preview from the VSCode command palette of Ctrl-Shift-V\n\n\n\n\n\n\nWarning\n\n\n\nPlease note the quick preview is just a simple markdown display preview (it won’t know about references, figures, code) and doesn’t rebuild your whole project, but can be useful for quick previews to check things look roughly right.\n\n\n\n\n\n\n\n\nNote\n\n\n\nCongratulations, you’ve built your first Quarto project! In the following chapters we will learn how to add content.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Creating Your First Quarto Document</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/basicmarkdown.html",
+    "href": "chapters/basicmarkdown.html",
+    "title": "4  Basic Markdown",
+    "section": "",
+    "text": "4.1 Headings\nMost Quarto documents are written using Markdown.\nMarkdown is a lightweight syntax for adding structure and formatting to plain text.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/basicmarkdown.html#headings",
+    "href": "chapters/basicmarkdown.html#headings",
+    "title": "4  Basic Markdown",
+    "section": "",
+    "text": "# Heading 1\n\n## Heading 2\n\n### Heading 3",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/basicmarkdown.html#bold-and-italics",
+    "href": "chapters/basicmarkdown.html#bold-and-italics",
+    "title": "4  Basic Markdown",
+    "section": "4.2 Bold and Italics",
+    "text": "4.2 Bold and Italics\n*italic text*\n\n**bold text**",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/basicmarkdown.html#lists",
+    "href": "chapters/basicmarkdown.html#lists",
+    "title": "4  Basic Markdown",
+    "section": "4.3 Lists",
+    "text": "4.3 Lists\nUnordered list:\n- Item one\n- Item two\n- Item three\nOrdered list:\n1. First item\n2. Second item\n3. Third item",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/basicmarkdown.html#links",
+    "href": "chapters/basicmarkdown.html#links",
+    "title": "4  Basic Markdown",
+    "section": "4.4 Links ",
+    "text": "4.4 Links \nYou should always create [clear descriptive links](https://teachinghub.bath.ac.uk/guide/creating-meaningful-links/).\nYou should always create clear descriptive links.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/basicmarkdown.html#basic-images",
+    "href": "chapters/basicmarkdown.html#basic-images",
+    "title": "4  Basic Markdown",
+    "section": "4.5 Basic Images",
+    "text": "4.5 Basic Images\nBasic images with alt text are created with:\n![Figure caption:here are some dice](images/dice.png){fig-alt=\"4 colourful \ndice tumbling mid air\"}\n\n\n\nFigure caption:here are some dice\n\n\nWe will cover how to include figures that you can reference, caption etc in Chapter 6.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/latex.html",
+    "href": "chapters/latex.html",
+    "title": "5  Converting Existing LaTeX Notes",
+    "section": "",
+    "text": "5.1 Recommended Migration Approach\nFortunately, a large proportion of LaTeX mathematics can be copied directly into Quarto documents without modification.\nFor example:\nand\ntypically work immediately.\nRather than converting an entire module at once:\nCommon areas that may need attention include:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Converting Existing LaTeX Notes</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/latex.html#recommended-migration-approach",
+    "href": "chapters/latex.html#recommended-migration-approach",
+    "title": "5  Converting Existing LaTeX Notes",
+    "section": "",
+    "text": "Choose a single lecture.\nCopy content into a .qmd file.\nRender frequently.\nFix issues incrementally.\n\n\n\nTikZ diagrams\nCustom macros\nComplex tables\nPackage-specific formatting",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Converting Existing LaTeX Notes</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/latex.html#automatically-converting-latex",
+    "href": "chapters/latex.html#automatically-converting-latex",
+    "title": "5  Converting Existing LaTeX Notes",
+    "section": "5.2 Automatically converting LaTeX",
+    "text": "5.2 Automatically converting LaTeX\nPandoc can convert between lots of different formats including LaTeX (.tex) and Quarto (.qmd). It won’t do a perfect job and which is why it’s recommended to carefully go through your TeX source. However if your TeX is relatively clean (few macros, extra packages, complex float layouts), then Pandoc can get you going quite quickly.\nFrom the command line you can run\npandoc -f latex -t markdown input-tex.tex -o output-md.qmd\n\n\n\n\n\n\nImportant\n\n\n\nYou will need to review the output .qmd to make sure you have output that is compatible.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nPandoc is not aware of your whole TeX project: you need to convert each .TeX separarely.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Converting Existing LaTeX Notes</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/latex.html#tidying-up-the-.qmd-file",
+    "href": "chapters/latex.html#tidying-up-the-.qmd-file",
+    "title": "5  Converting Existing LaTeX Notes",
+    "section": "5.3 Tidying up the .qmd file",
+    "text": "5.3 Tidying up the .qmd file\nHere are some things Pandoc does not readily convert into markdown:\n\nSection etc labels - if you used underscores in any of your latex labels you should change these to ‘-’ in the markdown file. The underscores confuse markdown. Chapter 9 discusses sections, chapters, etc.\nFigures - the default pandoc conversion is quite limited, so here we’ll use a more adaptable figure environment. In practice its easiest to just copy-paste the example code in Chapter 6.\nEquations - most equations convert fine but if you want to have equation numbers and labels you’ll need to do some tidying. See Chapter 7 for the syntax.\nTables - tables have a different format but it’s pretty easy to convert a latex table using find/replace or online table editors/converters (e.g. Table Convert) References - generally easy to fix - see Chapter 10\n\nThis list is based on the Making Lecture Notes with Bookdown guide by Vicky Scowcroft",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Converting Existing LaTeX Notes</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/figures.html",
+    "href": "chapters/figures.html",
+    "title": "6  Figures",
+    "section": "",
+    "text": "6.1 Basic Figure\nThe example below creates:\nFigure 6.1 shows four multi-coloured dice.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Figures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/figures.html#basic-figure",
+    "href": "chapters/figures.html#basic-figure",
+    "title": "6  Figures",
+    "section": "",
+    "text": "a numbered figure,\na visible caption,\nalternative text for screen readers,\na cross-reference target.\n\n![Figure caption](images/dice.png){#fig-dice fig-alt=\"This is descriptive alt text\"}\n\n@fig-dice shows four multi-coloured dice.\n\n\n\n\n\n\nFigure 6.1: Figure caption\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn Quarto, an image becomes a figure whenever it has a caption and appears by itself in a paragraph.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Figures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/figures.html#layout-options",
+    "href": "chapters/figures.html#layout-options",
+    "title": "6  Figures",
+    "section": "6.2 Layout Options",
+    "text": "6.2 Layout Options\n\n6.2.1 Size\n![Figure caption](images/dice.png){#fig-dice fig-alt=\"This is descriptive alt text\" width=20%}\n\n![Figure caption](images/dice.png){#fig-dice fig-alt=\"This is descriptive alt text\" width=2cm}\n\n\n\n\n\n\nFigure 6.2: Figure caption\n\n\n\n\n\n\n\n\n\nFigure 6.3: Figure caption\n\n\n\n\n\n6.2.2 Subfigures\nSubfigures allow multiple related images to be grouped under a single figure number with individual sub-captions.\n\n::: {#fig-dice-layout layout-ncol=2}\n\n![Figure caption for left image](images/dice.png){#fig-dice-left fig-alt=\"This is descriptive alt text\"}\n\n![Figure caption for right image](images/dice.png){#fig-dice-right fig-alt=\"This is descriptive alt text\"}\n\nHere is the main caption for the whole figure.\n:::\n\n\n\n\n\n\n\n\n\n\n\n(a) Figure caption for left image\n\n\n\n\n\n\n\n\n\n\n\n(b) Figure caption for right image\n\n\n\n\n\n\n\nFigure 6.4: Here is the main caption for the whole figure.\n\n\n\nNotes:\n\nIndividual image captions become sub-captions.\nThe final paragraph becomes the overall figure caption.\nBlank lines between images and captions are required.\nYou can also create more custom layouts: {layout-ncol=3}, {layout-nrow=2}\n\n\n\n6.2.3 Two Images Above One Wide Image\n\n\n\n\n\n\nNote\n\n\n\nFor brevity in the next few examples, I have just used pseduocode {{image.png}} to show where the image should be\n\n\n::: {layout=\"[[1,1],[1]]\"}\n\n{{image1.png}}\n\n{{image2.png}}\n\n{{image3.png}}\n\n:::\n\n\n6.2.4 Unequal Widths\n::: {layout=\"[[70,30],[100]]\"}\n\n{{large.png}}\n\n{{small.png}}\n\n{{full.png}}\n\n:::\n\n\n6.2.5 Adding Space Between Elements\n::: {layout=\"[[40,-20,40],[100]]\"}\n\n{{left.png}}\n\n{{right.png}}\n\n{{bottom.png}}\n\n:::\nNegative values create spacing between items.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Figures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/figures.html#figures-from-code",
+    "href": "chapters/figures.html#figures-from-code",
+    "title": "6  Figures",
+    "section": "6.3 Figures from code",
+    "text": "6.3 Figures from code\nFigures generated from Python, R, or Julia code are automatically treated as figures. See Section 8.5 for examples",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Figures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/figures.html#figure-divs",
+    "href": "chapters/figures.html#figure-divs",
+    "title": "6  Figures",
+    "section": "6.4 Figure Divs",
+    "text": "6.4 Figure Divs\nAny content can be treated as a figure by enclosing it in a fenced div with an identifier beginning with fig-. This is useful for:\n\nembedded videos\ninteractive visualisations\nHTML widgets\ncustom content that is not a simple image\n\n\n\n\n\n\n\nImportant\n\n\n\nThese only work for the HTML output and not PDF or Word. If you include a figure div, you should also include a fallback link to the resource in the caption to support the other output formats.\n\n\n::: {#fig-video}\n\n&lt;iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/EbAAmrB0luA?si=jYVDsTRDNb_8aj9X\" title=\"YouTube video player\" frameborder=\"0\" allowfullscreen&gt;&lt;/iframe&gt;\n\nThe final paragraph becomes the figure caption. You should include [link to the video here](www.youtube.com)\n\n:::\n\n\n\n\n\n\n\nFigure 6.5: The final paragraph becomes the figure caption. You should include link to the video here",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Figures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/figures.html#tikz-figures",
+    "href": "chapters/figures.html#tikz-figures",
+    "title": "6  Figures",
+    "section": "6.5 Tikz figures",
+    "text": "6.5 Tikz figures\n\n\n\n\n\n\nWarningTO DO\n\n\n\nInclude link to Tikz examples.\nSee quarto_tikz extension",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Figures</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html",
+    "href": "chapters/maths.html",
+    "title": "7  Maths Equations",
+    "section": "",
+    "text": "7.1 Inline Mathematics\nQuarto uses MathJax for mathematics in HTML outputs.\nProduces:\nThe force is given by \\(F = ma\\).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html#inline-mathematics",
+    "href": "chapters/maths.html#inline-mathematics",
+    "title": "7  Maths Equations",
+    "section": "",
+    "text": "The force is given by $F = ma$.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html#display-mathematics",
+    "href": "chapters/maths.html#display-mathematics",
+    "title": "7  Maths Equations",
+    "section": "7.2 Display Mathematics",
+    "text": "7.2 Display Mathematics\n$$\nF = ma\n$$",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html#numbered-equations",
+    "href": "chapters/maths.html#numbered-equations",
+    "title": "7  Maths Equations",
+    "section": "7.3 Numbered Equations",
+    "text": "7.3 Numbered Equations\nNumbered equations can be labelled.\n$$\nF = ma\n$$ {#eq-newton}\n\\[\nF = ma\n\\tag{7.1}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html#aligned-equations",
+    "href": "chapters/maths.html#aligned-equations",
+    "title": "7  Maths Equations",
+    "section": "7.4 Aligned equations",
+    "text": "7.4 Aligned equations\nYou can use the \\begin{align} or \\begin{aligned}to align equations (note \\begin{eqnarray} also works, but is generally deprecated and not recommended for TeX nowadays)\n$$\n\\begin{align}\na &= b + c \\\\\n  &= d + e\n\\end{align}\n$$\n\\[\n\\begin{align}\na &= b + c \\\\\n  &= d + e\n\\end{align}\n\\]\n\n\n\n\n\n\nCaution\n\n\n\nMathjax can’t have multiple labels for a multi-line equation (as of Oct 2026) - you can only label the whole align environment block. There are various workarounds: the simplest and least technical is to have separate equations (but loose the align control). It is still possible to label the whole block but this doesn’t present nicely (again more workarouds are possible, but this is MathJax rather than Quarto limitation.)\n$$\n\\begin{aligned}\n\\nabla \\cdot \\mathbf{E} &= \\frac{\\rho}{\\varepsilon_0} \\\\\n\\nabla \\cdot \\mathbf{B} &= 0 \\\\\n\\nabla \\times \\mathbf{E} &= -\\frac{\\partial \\mathbf{B}}{\\partial t} \\\\\n\\nabla \\times \\mathbf{B} &= \\mu_0\\mathbf{J}\n+ \\mu_0\\varepsilon_0\\frac{\\partial \\mathbf{E}}{\\partial t}\n\\end{aligned}\n$$ {#eq-maxwell}\n\\[\n\\begin{aligned}\n\\nabla \\cdot \\mathbf{E} &= \\frac{\\rho}{\\varepsilon_0} \\\\\n\\nabla \\cdot \\mathbf{B} &= 0 \\\\\n\\nabla \\times \\mathbf{E} &= -\\frac{\\partial \\mathbf{B}}{\\partial t} \\\\\n\\nabla \\times \\mathbf{B} &= \\mu_0\\mathbf{J}\n+ \\mu_0\\varepsilon_0\\frac{\\partial \\mathbf{E}}{\\partial t}\n\\end{aligned}\n\\tag{7.2}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html#referencing-equations",
+    "href": "chapters/maths.html#referencing-equations",
+    "title": "7  Maths Equations",
+    "section": "7.5 Referencing Equations",
+    "text": "7.5 Referencing Equations\nOnce labelled, equations can be referenced using:\nEquation @eq-newton describes the relationship between force, mass and acceleration.\nEquation Equation 7.1 describes the relationship between force, mass and acceleration.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/maths.html#newcommands-and-macros",
+    "href": "chapters/maths.html#newcommands-and-macros",
+    "title": "7  Maths Equations",
+    "section": "7.6 Newcommands and macros",
+    "text": "7.6 Newcommands and macros\n\n\n\n\n\n\nWarning\n\n\n\nTo do: include a simple way to create custom maths macros for HTML/PDF outputs.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Maths Equations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/code.html",
+    "href": "chapters/code.html",
+    "title": "8  Code",
+    "section": "",
+    "text": "8.1 Including inline code snippets\nQuarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.\nYou can include inline code snippets in between backticks, e.g. ```print(\"Hello, world!\")```.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/code.html#including-code-blocks",
+    "href": "chapters/code.html#including-code-blocks",
+    "title": "8  Code",
+    "section": "8.2 Including code blocks",
+    "text": "8.2 Including code blocks\nYou can include code blocks in triple backticks, followed by the language name (for syntax highlighting) e.g. ```python\nprint(\"Hello, world!\")\n```\nThis results in the following rendered code output:\nimport numpy as np\nprint(\"Hello, world!\")\n\n\n\n\n\n\nTip\n\n\n\nSupported languages for syntax highlighting include: Python, R, Bash, C, C++, Java, JavaScript, MATLAB, markdown and many more. See the Quarto documentation for a full list of supported languages.\nFor completely unformatted text use the ```text option.\n\n\n\n8.2.1 Running Code\nExecutable code is placed inside a code chunk (notice the curly braces after the opening triple backticks). You can specify the programming language for the code chunk (e.g. python, r, julia, bash, etc.) and Quarto will automatically highlight the syntax.\n```{python}\n#| eval: false\nprint(\"Hello, world!\")\n```\nThis results in the following rendered output (shows code and output):\n\nprint(\"Hello, world!\")\n\nHello, world!",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/code.html#showing-output-but-hiding-code",
+    "href": "chapters/code.html#showing-output-but-hiding-code",
+    "title": "8  Code",
+    "section": "8.3 Showing Output but Hiding Code",
+    "text": "8.3 Showing Output but Hiding Code\nYou can run the code and display the output but hide the code source from viewers with #| echo: false\n```{python}\n#| echo: false\nprint(\"Only the output will appear.\")\n```\nThis results in the following rendered output:\n\n\nOnly the output will appear.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/code.html#folding-long-code-blocks",
+    "href": "chapters/code.html#folding-long-code-blocks",
+    "title": "8  Code",
+    "section": "8.4 Folding Long Code Blocks",
+    "text": "8.4 Folding Long Code Blocks\nLong code examples can be collapsed to avoid cluttering the document with #| code-fold: true. You can also add a summary to the code block with #| code-summary: \"Show Python code\".\n```{python}\n#| code-fold: true\n#| code-summary: \"Show Python code\"\n\nprint(\"This code is initially hidden.\")\n```\n\n\nShow Python code\nprint(\"This code is initially hidden.\")\n\n\nThis code is initially hidden.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe folding code blocks are expanded in the static PDF output.\n\n\n\n\n\n\n\n\nTip\n\n\n\nIt’s a good idea to keep code lines short (e.g. &lt; 80 characters) as the LaTeX output does not wrap long lines of code.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/code.html#sec-code-figs",
+    "href": "chapters/code.html#sec-code-figs",
+    "title": "8  Code",
+    "section": "8.5 Figures from code",
+    "text": "8.5 Figures from code\nFigures generated from Python, R, or Julia code are automatically treated as figures. You should include:\n\n#| label: fig-line-plot - this gives a reference label to the figure\n#| fig-cap: \"A simple line plot\" - this gives a figure caption\n#| fig-alt: \"Descriptive alt text\" - this gives alternative text for accessibility (e.g. screen readers)\n\n```{python}\n#| label: fig-line-plot\n#| fig-cap: \"A simple line plot\"\n#| fig-alt: \"Line graph showing values increasing and decreasing across four observations.\"\nimport matplotlib.pyplot as plt\nplt.plot([1, 23, 2, 4])\nplt.show()\n```\n\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 23, 2, 4])\nplt.show()\n\n\n\n\n\n\n\nFigure 8.1: A simple line plot\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nOften it’s useful to add #| echo: false at the start of the figure will make sure to not echo the code and only display the figure:\n```{python}\n#| echo: false\n#| label: fig-line-plot-noecho\n#| fig-cap: \"A simple line plot\"\n#| fig-alt: \"A simplified plot with the#| echo: falseto not show the code\"\nimport matplotlib.pyplot as plt\nplt.plot([1, 23, 2, 4])\nplt.show()\n```\n\n\n\n\n\n\n\n\nFigure 8.2: A simple line plot",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/code.html#global-code-options",
+    "href": "chapters/code.html#global-code-options",
+    "title": "8  Code",
+    "section": "8.6 Global Code Options",
+    "text": "8.6 Global Code Options\nChunk options can be applied to every code block using the document YAML.\n---\nexecute:\n  echo: false\n  warning: false\n  message: false\n---",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Code</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/sections.html",
+    "href": "chapters/sections.html",
+    "title": "9  Working with Sections",
+    "section": "",
+    "text": "9.1 How sections are displayed\nSection headings create document structure automatically.\nQuarto can automatically number sections using:\nEach separate .qmd file will appear in the left hand navigation menu as a (numbered) chapter.\nWithin each .qmd, each heading level will appear in the table of contents (right hand side)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Sections</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/sections.html#how-sections-are-displayed",
+    "href": "chapters/sections.html#how-sections-are-displayed",
+    "title": "9  Working with Sections",
+    "section": "",
+    "text": "Heading level 1 # will increment the number (e.g. 1,2,3 etc)\nHeading level 2 ## will increment the subpoints (e.g. 1.1, 1.2, 1.3 etc)\nHeading level 3 ### will increment the sub-subpoint (e.g. 1.1.1, 1.1.2, 1.1.3 etc)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Sections</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/sections.html#numbering-sections",
+    "href": "chapters/sections.html#numbering-sections",
+    "title": "9  Working with Sections",
+    "section": "9.2 Numbering sections",
+    "text": "9.2 Numbering sections\nSections are numbered by default (# Section heading). You can create a unnumbered heading with {.unnumbered} (e.g. )# Unnumbered section heading {.unnumbered})\n\n9.2.1 Global defaults\nNumbered sections are the default and can be controlled in the yaml\nformat:\n  html:\n    number-sections: true\n    toc: true\n    toc-depth: 3\n    toc-location: right\n  pdf:\n    number-sections: true",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Sections</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/sections.html#labelling-sections",
+    "href": "chapters/sections.html#labelling-sections",
+    "title": "9  Working with Sections",
+    "section": "9.3 Labelling sections",
+    "text": "9.3 Labelling sections\nSections can be assigned identifiers.\n## Newton's Laws {#sec-newton}\n\n\n\n\n\n\nImportant\n\n\n\nYou should use - rather than _ in section labels as underscores can confuse Quarto!",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Sections</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/sections.html#referencing-sections",
+    "href": "chapters/sections.html#referencing-sections",
+    "title": "9  Working with Sections",
+    "section": "9.4 Referencing sections",
+    "text": "9.4 Referencing sections\nYou can then reference the section elsewhere:\nSee @sec-newton for an introduction to Newton's Laws.\nWhen rendered, Quarto automatically inserts the appropriate section number.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Sections</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/referencing.html",
+    "href": "chapters/referencing.html",
+    "title": "10  References and Citations",
+    "section": "",
+    "text": "10.1 Connecting the Bibliography\nQuarto supports citation management through BibTeX and a .bib file in the normal way.\nAdd the bibliography file to your YAML:\n##Citing Sources\nCitations can be added using citation keys.\nA single citation for literate programming Knuth (1984).\nMultiple citations:\nMultiple citations can be cited like this (Knuth 1984; Le Foll 2026).",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>References and Citations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/referencing.html#connecting-the-bibliography",
+    "href": "chapters/referencing.html#connecting-the-bibliography",
+    "title": "10  References and Citations",
+    "section": "",
+    "text": "---\nbibliography: references.bib\ncsl: harvard-university-of-bath.csl\n---\n\n\n\n\n\n\nNote\n\n\n\nA copy of the Harvard Bath style file is included in these notes.\n\n\n\n\nA single citation for literate programming @knuth84.\n\n\nMultiple citations can be cited like this [@knuth84; @le2026quarto].",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>References and Citations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/referencing.html#reference-list",
+    "href": "chapters/referencing.html#reference-list",
+    "title": "10  References and Citations",
+    "section": "10.2 Reference list",
+    "text": "10.2 Reference list\nA reference list is generated automatically at the end of each chapter page.\nIf you prefer one single reference list for the whole book, include a separate chapter with a specific call to the reference list:\n# References {.unnumbered}\n::: {#refs}\n:::\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.\n\n\nLe Foll, Elen. 2026. Quarto for Reproducible Research Workflows and\nAcademic Publishing. https://elenlefoll.quarto.pub/quarto4research/Quarto4Research.pdf.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>References and Citations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html",
+    "href": "chapters/moremarkdown.html",
+    "title": "11  More Markdown",
+    "section": "",
+    "text": "11.1 Tables\nSimple tables can be written directly in Markdown.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html#tables",
+    "href": "chapters/moremarkdown.html#tables",
+    "title": "11  More Markdown",
+    "section": "",
+    "text": "| Quantity | Symbol | SI Unit |\n|-----------|---------|---------|\n| Force | F | N |\n| Energy | E | J |\n| Mass | m | kg |\n\n11.1.1 Labelled Tables\nTables can also be labelled for cross-reference.\n| Quantity | Symbol | SI Unit |\n|-----------|---------|---------|\n| Force | F | N |\n| Energy | E | J |\n| Mass | m | kg |\n\n: SI units used throughout this module {#tbl-siunits}\n\n\n\nTable 11.1: SI units used throughout this module\n\n\n\n\n\nQuantity\nSymbol\nSI Unit\n\n\n\n\nForce\nF\nN\n\n\nEnergy\nE\nJ\n\n\nMass\nm\nkg\n\n\n\n\n\n\nReference the table using:\nSee @tbl-siunits for a summary of units.\nSee Table 11.1 for a summary of units.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html#collapsible-sections",
+    "href": "chapters/moremarkdown.html#collapsible-sections",
+    "title": "11  More Markdown",
+    "section": "11.2 Collapsible Sections",
+    "text": "11.2 Collapsible Sections\n&lt;details&gt;\n&lt;summary&gt;Show solution&lt;/summary&gt;\n\nThe solution can be placed here.\n\n&lt;/details&gt;\n\n\nShow solution\n\nThe solution can be placed here.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html#callout-highlighted-boxes",
+    "href": "chapters/moremarkdown.html#callout-highlighted-boxes",
+    "title": "11  More Markdown",
+    "section": "11.3 Callout highlighted Boxes",
+    "text": "11.3 Callout highlighted Boxes\nYou can include callout boxes to format text areas to draw attention to certain parts. There are five different environments and a custom environment\n\nnote\ntip\nimportant\ncaution\nwarning\n\n::: {.callout-note}\n\nHere is a callout note.\n\n:::\n\n\n\n\n\n\nNote\n\n\n\nHere is a callout note.\n\n\n\n\n\n\n\n\nTip\n\n\n\nHere is a callout tip.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nHere is a callout important.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nHere is a callout caution.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nHere is a callout warning.\n\n\n::: {.callout-note}\n## Custom title\n\nHere's my custom block, which displays like a note!\n\n:::\n\n\n\n\n\n\nNoteCustom title\n\n\n\nHere’s my custom block, which displays like a note!",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html#footnotes",
+    "href": "chapters/moremarkdown.html#footnotes",
+    "title": "11  More Markdown",
+    "section": "",
+    "text": "This is a footnote↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html#hidingcommenting-out-content",
+    "href": "chapters/moremarkdown.html#hidingcommenting-out-content",
+    "title": "11  More Markdown",
+    "section": "11.5 Hiding/commenting out content",
+    "text": "11.5 Hiding/commenting out content\nYou can also include HTML comments that will be not be visible on the page.\n\n\n\n\n\n\nWarning\n\n\n\nThese HTML comments are still visible in the rendered HTML source (this is very different from LaTeX). Please don’t put anything there that you don’t want students to see (e.g. solutions!)\n\n\n&lt;!-- Update this example before publication --&gt;\n\nThese can also span multiple lines (which can be useful for commenting out sections you don’t need!)\n&lt;!--\nTODO:\n- Add an example for cross-references.\n- Check accessibility guidance.\n- Review screenshot captions.\n--&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moremarkdown.html#quarto-extensions",
+    "href": "chapters/moremarkdown.html#quarto-extensions",
+    "title": "11  More Markdown",
+    "section": "11.6 Quarto extensions",
+    "text": "11.6 Quarto extensions\nQuarto extensions are a way to add new features to Quarto. They can be used to create new output formats, add new functionality, or customize the behavior of Quarto.\nSee the Quarto extensions guidance for a list of extensions and how to create your own.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>More Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moresettings.html",
+    "href": "chapters/moresettings.html",
+    "title": "12  Tweaking the YAML Header",
+    "section": "",
+    "text": "12.1 Table of Contents\nThe YAML block appears at the top of every Quarto document.\nA simple example:\nEnable a table of contents:",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Tweaking the YAML Header</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moresettings.html#table-of-contents",
+    "href": "chapters/moresettings.html#table-of-contents",
+    "title": "12  Tweaking the YAML Header",
+    "section": "",
+    "text": "format:\n  html:\n    toc: true",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Tweaking the YAML Header</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moresettings.html#section-numbering",
+    "href": "chapters/moresettings.html#section-numbering",
+    "title": "12  Tweaking the YAML Header",
+    "section": "12.2 Section Numbering",
+    "text": "12.2 Section Numbering\nformat:\n  html:\n    number-sections: true",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Tweaking the YAML Header</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/moresettings.html#themes",
+    "href": "chapters/moresettings.html#themes",
+    "title": "12  Tweaking the YAML Header",
+    "section": "12.3 Themes",
+    "text": "12.3 Themes\nQuarto provides several built-in themes.\nformat:\n  html:\n    theme: cosmo\nOther popular themes include:\n\nflatly\nlitera\nunited\nlumen\nsandstone\n\nIf you specify a light and dark theme, then Quarto will add in a toggle button to allow users to switch.\nformat:\n  html:\n    theme:\n      light: cosmo\n      dark: darkly\n\n\n\n\n\n\nCaution\n\n\n\nIf you use dark mode, please if you images have transparency (if you have black text on a transparent background this can be illegible).",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Tweaking the YAML Header</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/publishing.html",
+    "href": "chapters/publishing.html",
+    "title": "13  Publishing a Quarto Project",
+    "section": "",
+    "text": "13.1 Publish to Moodle\nOnce you have created your Quarto project, you will need to publish the rendered output so that others can access it. Quarto supports several publishing options, but for most teaching-related content at the University of Bath, publishing to Moodle is the recommended approach.\nFor teaching materials intended for University of Bath students, we recommend publishing your Quarto website or mini-site through Moodle.\nBenefits include:\nQuarto websites generate a collection of HTML, CSS, JavaScript, image, and supporting files. These can be hosted within Moodle as a self-contained mini-site.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Publishing a Quarto Project</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/publishing.html#publish-to-moodle",
+    "href": "chapters/publishing.html#publish-to-moodle",
+    "title": "13  Publishing a Quarto Project",
+    "section": "",
+    "text": "Available directly to students through Moodle.\nIncluded within the University’s Moodle archive processes.\nCovered by established institutional retention arrangements.\nAccess controlled through Moodle course permissions.\nNo requirement for students to visit external websites.\n\n\n\n13.1.1 Moodle publishing workflow\n\nRender your Quarto project.\nLocate the generated _site or output folder.\nCreate a ZIP archive containing the entire published site and all supporting files.\nIn Moodle, create a File activity (not a Folder activity).\nUpload the ZIP file and use Moodle’s Unzip option.\nSet the site’s index.html file as the Main File.\nSave the activity and test that the site launches correctly.\n\nThe University of Bath Moodle currently has a 50 MB upload limit for file activities. If your published site exceeds this size please contact tel@bath.ac.uk\n\n\n\n\n\n\nImportant\n\n\n\nDetailed step-by-step guidance is available at Publishing an HTML mini-site to Moodle\n\n\n\n\n13.1.2 Updating a Moodle-hosted site\nWhen you make changes to your Quarto project:\n\nRe-render the site locally.\nCreate a new ZIP archive of the updated output.\nReplace the all existing files in Moodle.\nEnsure the correct index.html file remains set as the Main File.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Publishing a Quarto Project</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/publishing.html#public-resources-github-pages",
+    "href": "chapters/publishing.html#public-resources-github-pages",
+    "title": "13  Publishing a Quarto Project",
+    "section": "13.2 Public Resources: GitHub Pages",
+    "text": "13.2 Public Resources: GitHub Pages\nIf your Quarto content is intended for public access, GitHub Pages is an excellent option.\nAdvantages include:\n\nFree hosting.\nIntegrated version control through Git.\nCollaborative authoring workflows.\nAutomatic publishing when content is updated.\nSuitable for open educational resources, documentation, and public-facing guides.\n\nGitHub Pages is particularly useful for resources that do not need Moodle authentication and are intended to be shared publicly.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Publishing a Quarto Project</span>"
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+# Maths Equations {#sec-maths}
+
+Quarto uses MathJax for mathematics in HTML outputs.
+
+## Inline Mathematics
+
+```markdown
+The force is given by $F = ma$.
+```
+
+Produces:
+
+The force is given by $F = ma$.
+
+## Display Mathematics
+
+```markdown
+$$
+F = ma
+$$
+```
+
+## Numbered Equations
+
+Numbered equations can be labelled.
+
+```markdown
+$$
+F = ma
+$$ {#eq-newton}
+```
+
+$$
+F = ma
+$$ {#eq-newton}
+
+## Aligned equations
+
+You can use the `\begin{align}` or `\begin{aligned}`to align equations (note `\begin{eqnarray}` also works, but is generally deprecated and *not recommended for TeX nowadays*)
+
+```markdown
+$$
+\begin{align}
+a &= b + c \\
+  &= d + e
+\end{align}
+$$
+```
+
+$$
+\begin{align}
+a &= b + c \\
+  &= d + e
+\end{align}
+$$
+
+::: {.callout-caution}
+
+Mathjax can't have multiple labels for a multi-line equation (as of Oct 2026) - you can only label the whole `align` environment block. There are various workarounds: the simplest and least technical is to have separate equations (but loose the align control). It is still possible to label the whole block but this doesn't present nicely (again more workarouds are possible, but this is *MathJax* rather than Quarto limitation.)
+
+```markdown
+$$
+\begin{aligned}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0\mathbf{J}
++ \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{aligned}
+$$ {#eq-maxwell}
+```
+
+$$
+\begin{aligned}
+\nabla \cdot \mathbf{E} &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot \mathbf{B} &= 0 \\
+\nabla \times \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+\nabla \times \mathbf{B} &= \mu_0\mathbf{J}
++ \mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
+\end{aligned}
+$$ {#eq-maxwell}
+:::
+
+## Referencing Equations
+
+Once labelled, equations can be referenced using:
+
+```markdown
+Equation @eq-newton describes the relationship between force, mass and acceleration.
+```
+
+Equation @eq-newton describes the relationship between force, mass and acceleration.
+
+## Newcommands and macros
+
+
+::: {.callout-warning}
+
+To do: include a simple way to create custom maths macros for HTML/PDF outputs.
+
+:::
+

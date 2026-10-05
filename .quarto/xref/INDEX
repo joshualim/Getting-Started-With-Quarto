@@ -1,0 +1,101 @@
+{
+  "index.qmd": {
+    "index.html": "32451a38"
+  },
+  "intro.qmd": {
+    "intro.html": "95ca2d8b"
+  },
+  "summary.qmd": {
+    "summary.html": "fced857d"
+  },
+  "references.qmd": {
+    "references.html": "ae0e9161"
+  },
+  "installing.qmd": {
+    "installing.html": "dc089805"
+  },
+  "firstdoc.qmd": {
+    "firstdoc.html": "606b5532"
+  },
+  "basicmarkdown.qmd": {
+    "basicmarkdown.html": "89ccc207"
+  },
+  "sections.qmd": {
+    "sections.html": "cbdfa517"
+  },
+  "latex.qmd": {
+    "latex.html": "c966f25d"
+  },
+  "figures.qmd": {
+    "figures.html": "421f314c"
+  },
+  "maths.qmd": {
+    "maths.html": "44736e07"
+  },
+  "code.qmd": {
+    "code.html": "e9723064"
+  },
+  "moremarkdown.qmd": {
+    "moremarkdown.html": "93ef203c"
+  },
+  "moresettings.qmd": {
+    "moresettings.html": "374250e1"
+  },
+  "publishing.qmd": {
+    "publishing.html": "32f63bf3"
+  },
+  "referencing.qmd": {
+    "referencing.html": "d98b307e"
+  },
+  "chapters/sections.qmd": {
+    "sections.html": "b208c321"
+  },
+  "chapters/referencing.qmd": {
+    "referencing.html": "5030b8f6"
+  },
+  "chapters/intro.qmd": {
+    "intro.html": "730f073d"
+  },
+  "chapters/installing.qmd": {
+    "installing.html": "f7bb7326"
+  },
+  "chapters/firstdoc.qmd": {
+    "firstdoc.html": "7ca017ab"
+  },
+  "chapters/basicmarkdown.qmd": {
+    "basicmarkdown.html": "e4cbeaf4"
+  },
+  "chapters/latex.qmd": {
+    "latex.html": "6ca794eb"
+  },
+  "chapters/figures.qmd": {
+    "figures.html": "4aa87b57"
+  },
+  "chapters/maths.qmd": {
+    "maths.html": "90e8062c"
+  },
+  "chapters/code.qmd": {
+    "code.html": "a8b5bf57"
+  },
+  "chapters/moremarkdown.qmd": {
+    "moremarkdown.html": "63af78b3"
+  },
+  "chapters/moresettings.qmd": {
+    "moresettings.html": "9de30f32"
+  },
+  "chapters/publishing.qmd": {
+    "publishing.html": "61985e8e"
+  },
+  "chapters/summary.qmd": {
+    "summary.html": "2648e0ce"
+  },
+  "chapters/references.qmd": {
+    "references.html": "c2cc9032"
+  },
+  "chapters/jupyternotebook.ipynb": {
+    "jupyternotebook.html": "ae8931a1"
+  },
+  "appendices/jupyternotebook.ipynb": {
+    "jupyternotebook.html": "860bce47"
+  }
+}

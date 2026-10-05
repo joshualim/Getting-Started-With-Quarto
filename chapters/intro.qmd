@@ -1,0 +1,95 @@
+# What is Quarto?
+
+Quarto is a modern publishing system that allows you to create teaching materials from simple plain-text source files and publish them to a range of formats including:
+
+- HTML websites
+- PDF documents
+- Microsoft Word documents
+- PowerPoint presentations
+- Reveal.js slide decks
+- Books and collections of lecture notes
+
+
+::: {.callout-note}
+
+This guide introduces the fundamentals of Quarto using a **Visual Studio Code (VS Code) workflow.**
+
+Alternatively you can also use Quarto through RStudio, the command line and other routes too!
+
+:::
+
+
+## Why Use Quarto?
+
+### Write Once, Publish Anywhere
+
+A single source document can be rendered as:
+
+- A website for online reading
+- A printable PDF
+- A Word document
+- Presentation slides
+
+### Accessible formats
+
+HTML output can provide:
+
+- Responsive design
+- Screen reader support
+- Improved navigation
+- Adjustable text size
+- Better support for mobile devices (compared to PDFs)
+
+### Plain Text Source Files
+
+Quarto files are plain text, making them:
+
+- Easy to edit
+- Easy to archive
+- Suitable for version control systems such as Git
+- Portable across operating systems
+
+
+::: {.callout-note}
+
+If you're from a LaTeX background or bookdown then you'll find the equation syntax and referencing familiar (citations can be managed with a .bib file). 
+
+However, given how extensible LaTeX is, you won't have access to all the packages you may be familiar with.
+
+:::
+
+
+### Rich content
+You can:
+
+  -   embed content (e.g. video, interactive widgets)
+  -   execute code and render outputs (e.g. Python, R)
+
+
+## The anatomy of a Quarto project
+
+A typical Quarto project consists of:
+
+- A project folder
+- A `_quarto.yml` configuration file that sets project-level settings (e.g. formatting options, output formats). Similar to a LaTeX preamble, it's useful to have this separately from the source files so you can easily re-use it.
+- One or more Quarto source files (with the extension `.qmd`). This is written in markdown and is the main bulk of your document.
+- a folder for images and other resources
+
+Optionally, you may also include:
+- a bibliography file (with the extension `.bib`) for citations
+- a folder for custom scripts (e.g. Python, R) that can be executed during the rendering process
+- a folder for custom extensions (e.g. for new output formats or features - see [Quarto extensions](https://quarto.org/docs/extensions/))
+
+## The Quarto stack
+
+Quarto helps automate the process of converting your source content and configuration into a range of publication formats. You write your content in a `.qmd` file and control how it is rendered using YAML settings (either within the document or in project-level `.yml` files). Quarto then takes care of the remaining steps, so you can focus on writing content rather than managing complex publishing workflows.
+
+**Rendering workflow**
+
+1. **You write content** in a `.qmd` file using Markdown, equations, images, and optional code (e.g. additional .py, .R, .ipynb files).
+2. **You define settings** using YAML metadata (your `_quarto.yml` file or a YAML block within the document).
+3. **Quarto executes code** (if present) using **Knitr, Jupyter**, or another supported engine.
+4. **Quarto converts content** using Pandoc.
+5. **Quarto generates final output** in one or more formats. This includes HTML books (*like this one*), PDF documents (via LaTeX) and other formats (e.g. Word, Reveal.js, EPUB)
+
+In practice, most authors only need to maintain their `.qmd` files and YAML settings (steps 1 and 2 above). Quarto automates the execution, conversion, and creation steps, allowing you to create professional outputs from a single source document.

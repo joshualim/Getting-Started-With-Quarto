@@ -1,0 +1,46 @@
+# Installing the required Software
+
+A typical Quarto workflow requires:
+
+1. Quarto (this is a command line tool to render the outputs)
+2. a TeX installation (for PDF output)
+3. Visual Studio Code (VS Code)
+
+Additionally if you wish to execute python/R code from your Quarto project, you should this installed.
+
+::: {.callout-note}
+
+This is similar to LaTeX, where you'd have TeXLive/MikTeX installation and then a editor of your choice
+
+:::
+
+
+## 1. Install Quarto
+
+Download Quarto from: <https://quarto.org>
+
+After installation, to check Quarto has been installed and added into the Path,  open a terminal and run:
+
+```bash
+quarto check
+```
+
+## Install TeX
+This is not covered here, but there are lots of ways of getting TeX!
+
+A minimal installation, where you can add additional packages as you go may be enough!
+
+## Install Visual Studio Code
+
+Download VS Code from: <https://code.visualstudio.com>
+
+Recommended extensions:
+
+- Quarto
+- Markdown All in One
+
+Some other noteworthy extensions for writing documents in VSCode:
+
+- GitLens 
+- Zotero Citation Picker
+

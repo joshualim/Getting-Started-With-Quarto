@@ -1,0 +1,80 @@
+# Creating Your First Quarto Document
+
+# Setting up your Quarto project
+
+1. Create a new directory for your project.
+2. Launch VSCode
+3. Open the command palette (Ctrl-shift-P) and begin typing ``` Quarto: Create Project```
+4. Select "Book Project"
+5. Choose the Project directory you created in step 1.
+
+This creates:
+
+- a simple `_quarto.yml` file (effectively your premable)
+- a few chapters (`*.qmd`)
+- a `references.bib` (a simple bibtex file)
+
+
+::: {.callout-tip}
+
+You may find it useful to create a `figures` and `chapters` folder to keep your top level directory tidy.
+
+:::
+
+::: {.callout-note}
+
+In this demo we use "Book Project" as the starting point. Alternatively, you may choose a "Default Project" (which has fewer default files) or any of the other templates. 
+
+:::
+
+## Rendering your project
+
+### Rendering from VSCode
+You can render your project by:
+
+ 1. Open a .qmd file (e.g. `index.qmd`) in VSCode.
+ 2. Open the command palette (Ctrl-shift-P) and begin typing ``` Quarto: Render Project```
+ 3. Select what to render: ```All formats | HTML | PDF ```
+
+::: {.callout-tip}
+
+Alternatively, you can launch a live preview which automatically updates as you edit your content. 
+Launch ```Quarto: Preview``` or ```Ctrl-Shift-K```
+
+:::
+
+
+### Rendering from the command line
+
+You can either use the Terminal in VSCode (or just have a terminal open) and render the document from a terminal using:
+
+```bash
+quarto render
+```
+
+::: {.callout-tip}
+
+Alternatively, you can launch a live preview which automatically updates as you edit your content.
+
+```bash
+quarto preview
+```
+
+:::
+
+### Quick preview
+For a quick preview of simple markdown code, the ```Markdown All in One``` VSCode extension, will show an instant preview of any single markdown document. You can run this Preview from the VSCode command palette of ```Ctrl-Shift-V```
+
+
+::: {.callout-warning}
+
+Please note the quick preview is just a simple markdown display preview (it won't know about references, figures, code) and doesn't rebuild your whole project, but can be useful for quick previews to check things look *roughly* right.
+
+:::
+
+
+::: {.callout-note}
+
+Congratulations, you've built your first Quarto project! In the following chapters we will learn how to add content.
+
+:::

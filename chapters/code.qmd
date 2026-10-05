@@ -1,0 +1,199 @@
+# Code 
+Quarto supports executable code, code examples, and syntax-highlighted snippets for a wide range of programming languages. This makes it ideal for creating teaching materials, laboratory manuals, lecture notes, and technical documentation.
+
+## Including inline code snippets
+You can include inline code snippets in between single backticks, e.g. `` `print("Hello, world!") ` `` (this renders as `print("Hello, world!")`).
+
+## Including code blocks
+You can include code blocks in triple backticks, followed by the language name (for syntax highlighting). For example:
+
+` ```python`
+
+` print("Hello, world!")`
+
+` ``` `
+
+This results in the following rendered code output with syntax highlighting:
+```python
+import numpy as np
+print("Hello, world!")
+```
+
+::: {.callout-tip}
+
+Supported languages for syntax highlighting include: Python, R, Bash, C, C++, Java, JavaScript, MATLAB, markdown and many more. See the [Quarto documentation](https://quarto.org/docs/authoring/code.html#code-blocks) for a full list of supported languages.
+
+For completely unformatted text use the ` ```text` option.
+
+:::
+
+
+## Running Code
+
+Executable code is placed inside a code chunk (**notice the curly braces after the opening triple backticks**). You can specify the programming language for the code chunk (e.g. `python`, `r`, `julia`, `bash`, etc.) and Quarto will automatically highlight the syntax.
+
+` ```{python}`
+
+` print("Hello, world!")`
+
+` ``` `
+
+This results in the following rendered output (shows code and output):
+```{python}
+print("Hello, world!")
+```
+
+## Options for running code
+You can control how code is executed and displayed using chunk options. For example, you can hide the code but show the output, or hide both the code and the output. You can also control whether warnings and messages are displayed.
+
+You can set chunk options for individual code chunks using the `#|` syntax directly after the opening triple backticks. 
+
+### Showing Output but Hiding Code
+You can run the code and display the output, **but hide the code source from viewers** with `#| echo: false`
+
+
+` ```{python}`
+
+` #| echo: false`
+
+` print("Only the output will appear.")`
+
+` ``` `
+
+This results in the following rendered output:
+
+```{python}
+#| echo: false
+
+print("Only the output will appear.")
+```
+
+### Folding Long Code Blocks
+
+Long code examples can be collapsed to avoid cluttering the document with `#| code-fold: true`. You can also add a summary to the code block with `#| code-summary: "Show Python code"`.
+
+` ```{python} `
+
+` #| code-fold: true`
+
+` #| code-summary: "Show Python code" `
+
+`print("This code is initially hidden.")`
+
+` ``` `
+
+This results in the following rendered output:
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show Python code"
+
+print("This code is initially hidden.")
+```
+
+
+::: {.callout-note}
+
+The folding code blocks are expanded in the static PDF output.
+
+:::
+
+
+::: {.callout-tip}
+
+It's a good idea to keep code lines short (e.g. < 80 characters) as the LaTeX output does not wrap long lines of code.
+
+:::
+
+
+## Figures from code {#sec-code-figs}
+
+Figures generated from Python, R, or Julia code are **automatically** treated as figures. To make these accessible, you should include:
+
+ - `#| label: fig-line-plot` - this gives a reference label to the figure
+ - `#| fig-cap: "A simple line plot"` - this gives a figure caption
+ - `#| fig-alt: "Descriptive alt text"` - this gives alternative text for accessibility (e.g. screen readers)
+
+For example, the following code chunk generates a simple line plot:
+
+` ```{python} `
+
+`#| label: fig-line-plot`
+
+`#| fig-cap: "A simple line plot"`
+
+`#| fig-alt: "Line graph showing values increasing and decreasing across four observations."`
+
+`import matplotlib.pyplot as plt`
+
+`plt.plot([1, 23, 2, 4])`
+
+`plt.show()`
+
+` ``` `
+
+This results in the following rendered output:
+
+```{python}
+#| label: fig-line-plot
+#| fig-cap: "A simple line plot"
+#| fig-alt: "Line graph showing values increasing and decreasing across four observations."
+
+import matplotlib.pyplot as plt
+
+plt.plot([1, 23, 2, 4])
+plt.show()
+```
+
+
+::: {.callout-tip}
+
+Often it's useful to add  `#| echo: false` at the start of the figure will make sure to not echo the code and only display the figure:
+
+` ```{python}`
+
+`#| echo: false`
+
+`#| label: fig-line-plot-noecho`
+
+`#| fig-cap: "A simple line plot"`
+
+`#| fig-alt: "A simplified plot with the `#| echo: false` to not show the code"`
+
+`import matplotlib.pyplot as plt`
+
+`plt.plot([1, 23, 2, 4])`
+
+`plt.show()`
+
+` ``` `
+
+```{python}
+#| echo: false
+#| label: fig-line-plot-noecho
+#| fig-cap: "A simple line plot"
+#| fig-alt: "A simplified plot with the `#| echo: false` to not show the code"
+
+import matplotlib.pyplot as plt
+
+plt.plot([1, 23, 2, 4])
+plt.show()
+```
+
+
+:::
+
+
+
+## Global Code Options
+
+Chunk options can be applied to every code block using the document YAML.
+
+````markdown
+---
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+````

@@ -1,0 +1,73 @@
+# Converting Existing LaTeX Notes
+
+Fortunately, a large proportion of LaTeX mathematics can be copied directly into Quarto documents without modification.
+
+For example:
+
+```latex
+\[
+F = ma
+\]
+```
+
+and
+
+```latex
+\begin{equation}
+E = mc^2
+\end{equation}
+```
+
+typically work immediately.
+
+## Recommended Migration Approach
+
+Rather than converting an entire module at once:
+
+1. Choose a single lecture.
+2. Copy content into a `.qmd` file.
+3. Render frequently.
+4. Fix issues incrementally.
+
+Common areas that may need attention include:
+
+- TikZ diagrams
+- Custom macros
+- Complex tables
+- Package-specific formatting
+
+## Automatically converting LaTeX
+
+Pandoc can convert between lots of different formats including LaTeX (.tex) and Quarto (.qmd). **It won't do a perfect job** and which is why it's recommended to carefully go through your TeX source. However if your TeX is *relatively clean* (few macros, extra packages, complex float layouts), then Pandoc can get you going quite quickly.
+
+From the command line you can run
+
+```bash
+pandoc -f latex -t markdown input-tex.tex -o output-md.qmd
+```
+
+
+::: {.callout-important}
+
+You will need to review the output .qmd to make sure you have output that is compatible. 
+
+:::
+
+
+::: {.callout-caution}
+
+Pandoc is not aware of your whole TeX project: you need to convert each .TeX separarely.
+
+:::
+
+## Tidying up the .qmd file
+Here are some things Pandoc does not readily convert into markdown:
+
+- Section etc labels - if you used underscores in any of your latex labels you should change these to ‘-’ in the markdown file. The underscores confuse markdown. @sec-sections discusses sections, chapters, etc.
+- Figures - the default pandoc conversion is quite limited, so here we’ll use a more adaptable figure environment. In practice its easiest to just copy-paste the example code in @sec-figures.
+- Equations - most equations convert fine but if you want to have equation numbers and labels you’ll need to do some tidying. See @sec-maths for the syntax.
+- Tables - tables have a different format but it’s pretty easy to convert a latex table using find/replace or online table editors/converters (e.g. [Table Convert](https://tableconvert.com/latex-to-markdown))
+References - generally easy to fix - see @sec-referencing
+
+This list is based on the [Making Lecture Notes with Bookdown guide by Vicky Scowcroft](https://vickyscowcroft.github.io/bookdown_lecture_notes_guide/02-latex-conversion.html#tidying)
+

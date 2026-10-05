@@ -1,0 +1,53 @@
+# References and Citations {#sec-referencing}
+
+Quarto supports citation management through BibTeX and a .bib file in the normal way.
+
+## Connecting the Bibliography
+
+Add the bibliography file to your YAML:
+
+```yaml
+---
+bibliography: references.bib
+csl: harvard-university-of-bath.csl
+---
+```
+
+
+::: {.callout-note}
+
+A copy of the [Harvard Bath style file](https://library.bath.ac.uk/harvard-bath/style-files) is included in these notes. 
+
+:::
+
+
+##Citing Sources
+
+Citations can be added using citation keys.
+
+```markdown
+A single citation for literate programming @knuth84.
+```
+
+A single citation for literate programming @knuth84.
+
+
+Multiple citations:
+
+```markdown
+Multiple citations can be cited like this [@knuth84; @le2026quarto]. 
+```
+
+Multiple citations can be cited like this [@knuth84; @le2026quarto]. 
+
+## Reference list
+
+A reference list is generated automatically at the end of each chapter page. 
+
+If you prefer one single reference list for the whole book, include a separate chapter with a specific call to the reference list:
+
+```markdown
+# References {.unnumbered}
+::: {#refs}
+:::
+```

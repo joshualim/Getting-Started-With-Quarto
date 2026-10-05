@@ -1,0 +1,37 @@
+# About this resource {.unnumbered}
+
+This is a Quarto book is for academic staff who want to get started using Quarto. We cover:
+
+- basic installation and building your first Quarto project
+- tips for migrating from a LaTeX source
+- using Quarto with a focus on lecture note things like: maths, figures, referencing and much more!
+ 
+
+::: {.callout-tip}
+
+If you prefer, the [Quarto website](https://quarto.org/) has a more complete set of information and examples: the purpose of this guide is to provide a more focused and practical introduction to Quarto for academic staff.
+
+:::
+
+
+::: {.callout-note}
+
+This guide introduces the fundamentals of Quarto using a **Visual Studio Code (VS Code) workflow.**
+
+Alternatively you can also use Quarto through RStudio (e.g. see [Quarto for Scientists - an R Studio Workflow](https://qmd4sci.njtierney.com/)), the command line and other routes too!
+
+:::
+
+
+::: {.callout-note}
+## Feedback?
+If you have any feedback or suggestion on how to make this book more useful then please get in touch with [Josh Lim](mailto:jajhl20@bath.ac.uk) - University of Bath.
+
+In particular I'd welcome:
+
+- Errors or corrections
+- Calls for clarification
+- Missing info
+- Suggestions for improvements/new topics
+
+:::

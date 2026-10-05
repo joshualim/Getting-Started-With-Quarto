@@ -1,0 +1,61 @@
+# Publishing a Quarto Project
+
+Once you have created your Quarto project, you will need to publish the rendered output so that others can access it. Quarto supports several publishing options, but for most teaching-related content at the University of Bath, publishing to Moodle is the recommended approach.
+
+## Publish to Moodle
+
+For teaching materials intended for University of Bath students, we recommend publishing your Quarto website or mini-site through Moodle.
+
+Benefits include:
+
+- Available directly to students through Moodle.
+- Included within the University's Moodle archive processes.
+- Covered by established institutional retention arrangements.
+- Access controlled through Moodle course permissions.
+- No requirement for students to visit external websites.
+
+Quarto websites generate a collection of HTML, CSS, JavaScript, image, and supporting files. These can be hosted within Moodle as a self-contained mini-site.
+
+
+### Moodle publishing workflow
+
+1. Render your Quarto project.
+2. Locate the generated `_site` or output folder.
+3. Create a ZIP archive containing the entire published site and all supporting files.
+4. In Moodle, create a **File** activity (not a Folder activity).
+5. Upload the ZIP file and use Moodle's **Unzip** option.
+6. Set the site's `index.html` file as the **Main File**.
+7. Save the activity and test that the site launches correctly.
+
+The University of Bath Moodle currently has a 50 MB upload limit for file activities. If your published site exceeds this size please contact [tel@bath.ac.uk](mailto:tel@bath.ac.uk)
+
+::: {.callout-important}
+
+Detailed step-by-step guidance is available at [Publishing an HTML mini-site to Moodle](https://teachinghub.bath.ac.uk/guide/publishing-a-html-mini-site-to-moodle/)
+
+:::
+
+
+
+### Updating a Moodle-hosted site
+
+When you make changes to your Quarto project:
+
+1. Re-render the site locally.
+2. Create a new ZIP archive of the updated output.
+3. Replace the all existing files in Moodle.
+4. Ensure the correct `index.html` file remains set as the Main File.
+
+## Public Resources: GitHub Pages
+
+If your Quarto content is intended for public access, GitHub Pages is an excellent option.
+
+Advantages include:
+
+- Free hosting.
+- Integrated version control through Git.
+- Collaborative authoring workflows.
+- Automatic publishing when content is updated.
+- Suitable for open educational resources, documentation, and public-facing guides.
+
+GitHub Pages is particularly useful for resources that do not need Moodle authentication and are intended to be shared publicly.

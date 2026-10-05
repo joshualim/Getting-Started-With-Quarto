@@ -1,0 +1,60 @@
+project:
+  type: book
+
+book:
+  title: "Getting Started With Quarto"
+  author: "Josh Lim"
+  description: A getting started guide to Quarto for academic staff.
+  site-url: https://moodle.bath.ac.uk/course/view.php?id=2497 #
+  date: "August 2026"
+  repo-url: https://github.com/joshualim/ # this is the URL to the GitHub repo for this book
+  repo-branch: main
+  repo-actions: [edit, issue] # this adds buttons under the contents to view page source on GitHub and to create an issue for the page
+  chapters:
+    - index.qmd
+    - chapters/intro.qmd
+    - chapters/installing.qmd
+    - chapters/firstdoc.qmd
+    - chapters/basicmarkdown.qmd
+    - chapters/latex.qmd
+    - chapters/figures.qmd
+    - chapters/maths.qmd
+    - chapters/code.qmd
+    - chapters/sections.qmd 
+    - chapters/referencing.qmd
+    - chapters/moremarkdown.qmd
+    - chapters/moresettings.qmd
+    - chapters/publishing.qmd
+    - chapters/references.qmd
+    - part: Appendices
+      appendices:
+        - appendices/jupyternotebook.ipynb
+
+  downloads: [pdf, docx]
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    number-sections: true
+    ## The following are some nice-to-haves
+    code-fold: false
+    code-overflow: wrap # prevents horizontal scrolling
+    code-line-numbers: false # puts line numbers on code blocks
+    citations-hover: true
+    footnotes-hover: true
+
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    number-sections: true
+    code-block-bg: true # wraps code block 
+    # keep-tex: true # this keeps the generated tex and is useful for debugging PDFs/LaTeX issues
+
+  docx: default
+
+

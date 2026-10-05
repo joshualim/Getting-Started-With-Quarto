@@ -1,0 +1,61 @@
+# Basic Markdown
+
+Most Quarto documents are written using Markdown.
+
+Markdown is a lightweight syntax for adding structure and formatting to plain text.
+
+## Headings
+
+```markdown
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+```
+
+## Bold and Italics
+
+```markdown
+*italic text*
+
+**bold text**
+```
+
+
+## Lists
+
+Unordered list:
+
+```markdown
+- Item one
+- Item two
+- Item three
+```
+
+Ordered list:
+
+```markdown
+1. First item
+2. Second item
+3. Third item
+```
+
+## Links 
+
+`You should always create [clear descriptive links](https://teachinghub.bath.ac.uk/guide/creating-meaningful-links/).`
+
+You should always create [clear descriptive links](https://teachinghub.bath.ac.uk/guide/creating-meaningful-links/).
+
+
+## Basic Images
+
+Basic images with alt text are created with:
+```markdown
+![Figure caption:here are some dice](images/dice.png){fig-alt="4 colourful 
+dice tumbling mid air"}
+```
+
+![Figure caption:here are some dice](images/dice.png){fig-alt="4 colourful dice tumbling mid air"}
+
+We will cover how to include figures that you can reference, caption etc in @sec-figures.
